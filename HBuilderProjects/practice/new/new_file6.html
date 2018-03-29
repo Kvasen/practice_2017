@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box div {
+				height: 50px;
+				width: 50px;
+				border: 1px red solid;
+			}
+			
+			.box {
+				height: 50px;
+				width: 250px;
+				display: flex;
+			}
+			
+			.out {
+				background: rgba(0,0,0,0.5);
+				width: 120px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="out">
+			<div class="box">
+				<div style="background: orangered;">1</div>
+				<div>2</div>
+				<div style="background: darkturquoise;">3</div>
+				<div>4</div>
+			</div>
+		</out>
+		<button>start</button>
+		<button>stop</button> 
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				var vOrder = 4;
+				var a;
+				var vStart = function() {
+					clearInterval(a);
+					a = setInterval(function() {
+					//$(".box div").eq((vOrder%4)).css("order",vOrder);// 不起作用
+					//	document.getElementsByClassName('box')[0].getElementsByTagName("div")[vOrder % 4].style.order = vOrder;   //可行
+						vOrder++;
+						var b=document.getElementsByClassName('box')[0];
+						b.appendChild(b.firstChild);
+						
+					}, 800);
+				};
+				var vStop = function() {
+					clearInterval(a);
+				}
+				$("button").first().on("click", vStart);
+				$("button").last().on("click", vStop);
+			});
+		</script>
+	</body>
+
+</html>

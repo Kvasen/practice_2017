@@ -1,0 +1,148 @@
+div{
+	/*border: 1px dotted blueviolet;*/
+}
+body{
+	padding: 0;
+	margin: 0 auto;
+	background-color: gray;
+	font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+	font-weight: bold;
+	text-align: center;
+	transition: all 2s;
+}
+body>div{
+	
+}
+.nav{
+	height: 80px;
+	width: 100%;
+	position: fixed;
+	background-color: purple;
+	box-shadow: 0 0 2px 0 black;
+}
+.top{
+	width: 100%;
+	position: relative;
+}
+.nav img{
+	position: absolute;
+	left: 50px;
+	top:30px;
+}
+.nav ul{
+	position: absolute;
+	right: 40px;
+	text-align: right;
+	margin: 20px;
+}
+.nav li{
+	display: inline-block;
+	height: 40px;
+	line-height: 2.5em;
+	padding:0 1em 0 1em;
+}
+.nav a{
+	color: grey;
+	text-decoration: none;
+}
+.nav-choosed{
+	color: black;
+	background-color: white;
+	box-shadow: 1px;
+}
+.main{
+	width: 1024px;
+	margin: 0 auto;
+}
+#c1{
+	z-index: 998;
+	padding: 50px;
+	padding-top: 120px;
+	background-color: darkgray;
+	color: white;
+	display: flex;
+}
+#c1 div{
+	text-align: right;
+	width:80%;
+}
+#c1 p:first-child{
+	font-size: 20px;
+}
+#c1 p:last-child{
+	font-size: 1.15em;
+}
+#c2{
+	z-index: 999;
+	padding: 50px;
+	background-color: gainsboro;
+	color: #666;
+	box-shadow: 0 -1px 1px 0px #888;
+}
+#c2 li{
+	display: inline-block;
+}
+#c3{
+	z-index: 1000;
+	padding: 50px;
+	background-color: gainsboro;
+	color: #666;
+	box-shadow: 0 -1px 1px 0px darkgray;
+}
+.form{
+	display: flex;
+	border: 0;
+	text-align: left;
+	padding-top: 50px;
+}
+.in{
+	background-color: inherit;
+	font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+	font-size: 1.5em;
+	outline: none;
+	border: none;
+	border-bottom:  1px solid #9eb0b0;
+	resize: none;
+}
+.form>div{
+	width: 50%;
+	padding: 0 50px;
+}
+label{
+	text-align: left;
+	color: purple;
+	opacity: 0;
+	position: relative;
+	top:20px;
+}
+h2{
+	text-align: center;
+}
+.bottom{
+	color: white;
+	width: 100%;
+}
+.bottom>div:first-child{
+	background-color: #A9A9A9;
+	padding: 40px;
+	box-shadow: 0 -1px 1px 0px grey;
+}
+.bottom>div:last-child{
+	background-color: purple;
+	padding: 20px;
+	box-shadow: 0 -1px 1px 0px grey;
+}
+.foot{
+	display: flex;
+}
+.foot div{
+	width: 50%;
+	padding:0 200px;
+}
+.foot a{
+	text-decoration: none;
+	color: purple;
+}
+.foot a:hover{
+	text-decoration: underline;
+}

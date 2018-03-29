@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/bppw.css" />
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="top">
+				<img src="#" />
+				<ul>
+					<li class="nav-choosed"><a href="#c1">ABOUT</a></li>
+					<li><a href="#c2">PORTFOLIO</a></li>
+					<li><a href="#c3">CONTACT</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div id="c1">
+				<div>
+					<p>Front-End Developer and UX/UI designer, with practical experience in project management, branding strategy, and creative direction; devoted to functional programming and information architecture.</p>
+					<hr />
+					<p>Web Developer - User Experience Designer - Graphic Artist</p>
+				</div>
+				<img src="#" />
+			</div>
+			<div id="c2">
+				<h2>PORTFOLIO</h2>
+				<hr />
+				<ul>
+					<li><img src="#" /></li>
+					<li><img src="#" /></li>
+					<li><img src="#" /></li>
+					<li><img src="#" /></li>
+					<li><img src="#" /></li>
+					<li><img src="#" /></li>
+				</ul>
+			</div>
+			<div id="c3">
+				<h2>CONTACT ME</h2>
+				<hr />
+				<div class="form">
+					<div>
+						<form>
+							<label>Name<br /></label>
+							<input required="required" class="in" type="text" placeholder="Name" />
+							<label><br />Email Address<br /></label>
+							<input required="required" class="in" type="email" placeholder="Email Address" />
+							<label><br />Phone Number<br /></label>
+							<input required="required" class="in" type="tel" placeholder="Phone Number" />
+							<label><br />Message<br /></label>
+							<textarea required="required" class="in" placeholder="Message" rows="5" cols="22"/></textarea><br />
+							<input type="submit" value="Send"/>
+						</form>
+					</div>
+					<div>
+						<p>
+							Want to get in touch with me? Be it to request more info about myself or my experience, to ask for my resume, tips on how to solve your sudoku, random questions about the universe and the meaning of life, or even if only for some nice Fika here in stunning Toronto... just feel free to drop me a line anytime.
+							<br /><br />
+							I promise to reply A.S.A.P.
+							<br /><br />
+							Note: No spam/soliciting pour moi, merci :)
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="foot">
+				<div>
+					<h3>ABOUT THIS PAGE</h3>
+					Made with coffee and music
+					by <a href="#">Justin Sane</a>.
+				</div>
+				<div>
+					<h3>AROUND THE WEB</h3>
+				</div>	
+			</div>
+			<div>
+				qlip © 2017. All Rights Reversed
+			</div>
+		</div>
+		<script>
+			$(document).ready(function() {
+				$(".nav li").click(function(){
+					$(".nav li").removeClass("nav-choosed");
+					$(this).addClass("nav-choosed");
+				});
+				$(window).scroll(function() {
+//					$("li").text( $(window).scrollTop());
+					if( $(window).scrollTop()<300){
+						$(".nav li").removeClass("nav-choosed");
+						$(".nav li:eq(0)").addClass("nav-choosed");					
+					}
+					else if( $(window).scrollTop()<600){
+						$(".nav li").removeClass("nav-choosed");
+						$(".nav li:eq(1)").addClass("nav-choosed");					
+					}
+					else{
+						$(".nav li").removeClass("nav-choosed");
+						$(".nav li:eq(2)").addClass("nav-choosed");					
+					}
+				});
+				$('.in').bind(' input propertychange ',function(){
+					$(this).prev().css("color","purple");
+					if(this.value!==""){
+//						$(".in").change(function(){
+							$(this).prev().animate({top:"0px",opacity:"1"});
+//						});
+					}
+					else{
+							$(this).prev().animate({top:"20px",opacity:"0"});
+					}
+				});
+				$(".in").blur(function(){	$(this).prev().css("color","grey");});
+			});
+		</script>
+	</body>
+</html> 
+  

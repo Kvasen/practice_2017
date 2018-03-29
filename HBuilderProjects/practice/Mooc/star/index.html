@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body,
+			ul,
+			li,
+			div {
+				margin: 0;
+				padding: 0;
+			}
+			
+			li {
+				position: relative;
+				list-style: none;
+				height: 40px;
+				float: left;
+				z-index: 9999999;
+			}
+			
+			.bottom {
+				position: relative;
+				height: 40px;
+				background-image: url(iVPGGC.png);
+				background-repeat: repeat-x;
+				z-index: 1;
+			}
+			
+			.cover {
+				position: absolute;
+				left: 0;
+				height: 40px;
+				background-image: url(iVPGGC.png);
+				background-repeat: repeat-x;
+				background-position: 0 -40px;
+				z-index: 999;
+			}
+			
+			p {
+				position: absolute;
+				top: 30px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="bottom">
+			<div class="cover">
+			</div>	</div>
+			<p><button id='sat'>评分</button>&nbsp;&nbsp;&nbsp;&nbsp;分数为：<span></span></p>
+	
+
+		<script src="jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(document).ready(function() {
+				function StarProp(total, score) {
+					this.total = total;
+					this.score = score;
+					this.init = function() {
+						$("span").text(this.score);
+						var creatStar = $(".bottom").html();
+						creatStar += "<ul class='stars'>";
+						for(var i = 0; i < this.total*2; i++) {
+							creatStar += "<li class='star'></li>";
+						}
+						creatStar += "</ul>";
+						$(".bottom").html(creatStar); 
+						$(".bottom").width(33 * this.total);
+						$(".cover").width(33 * this.score);
+						$("#sat").click(function() {
+							$(".star").width(33/2);
+							$(".stars").on("mousemove", ".star", function() {
+								$(".cover").width((33 * $(this).index() + 33)/2);
+							}).on("click", ".star", function() {
+								this.score = ($(this).index() + 1)/2;
+								$("span").text(this.score);
+								$("ul").off();
+							}).on("mouseleave", ".star", function() {
+								$(".cover").width(33 * this.score);
+							})
+						})
+					}
+				}	
+				var s6 = new StarProp(5, 2.5);
+				s6.init();
+
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+	</head>
+
+	<body>
+		<section class="todoapp">
+			<header class="header">
+				<input class="new-todo" autofocus autocomplete="off" placeholder="What needs to be done?" v-model="newTodo" @keyup.enter="addTodo" 
+					><@dblclick="ck" @blur="bl"
+					>
+			</header>
+			<section class="main" v-show="todos.length" v-cloak>
+				<ul class="todo-list">
+					<li class="todo" v-for="todo in filteredTodos" :class="{completed: todo.completed, editing: todo == editedTodo}">
+						<div class="view">
+							<input class="toggle" type="checkbox" v-model="todo.completed">
+							<label @dblclick="editTodo(todo)">{{todo.title}} </label>
+							<button class="destroy" @click="removeTodo(todo)"></button>
+						</div>
+						<input class="edit" type="text">
+					</li>
+				</ul>
+			</section>
+			<footer class="footer">
+				<span class="todo-count">
+            <strong></strong>left
+        </span>
+				<ul class="filters">
+					<li>
+						<a href="#/all">All</a>
+					</li>
+					<li>
+						<a href="#/active">Active</a>
+					</li>
+					<li>
+						<a href="#/completed">Completed</a>
+					</li>
+				</ul>
+				<button class="clear-completed"> <!--remaining">-->
+            Clear completed
+        </button>
+			</footer>
+		</section>
+		<!--
+作者：进击的前端
+链接：http://www.jianshu.com/p/82778a67ea57
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。-->
+		<script src="js/vue.min.js"></script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/n311.css" />
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$(".main,.swiper-container").height($(window).height());
+				var mySwiper = new Swiper('.swiper-container', {
+					direction: 'vertical',
+					loop: false,
+					onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+						swiperAnimateCache(swiper); //隐藏动画元素 
+						swiperAnimate(swiper); //初始化完成开始动画
+					},
+					onSlideChangeEnd: function(swiper) {
+						swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+				$("#pingan_2 .text").css("padding-top", 0.55 * $(window).width());
+				$("#pingan_3 #ph").css("height", 0.3 * $(window).width());
+				$("#pingan_3 .text").css("padding-left", $(window).width() / 14);
+				$("#pingan_3 span").before("<img src='img/xu_03.png' />");
+				$("#pingan_3 img").css({
+					"position": "absolute",
+					"width": fs * 2,
+					"left": -fs - 1
+				});
+				$("input").css("height", 3 * fs);
+				$("#pingan_4 .input").css("padding-top", 0.35 * $(window).width());
+					}
+				})
+				var fs = $(window).width() / 40;
+				$("html").css("font-size", fs);
+			});
+		</script>
+		<title></title>
+	</head>
+
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="main swiper-slide" id="pingan_1"></div>
+				<div class="main swiper-slide" id="pingan_2">
+					<div class="text">
+						<div  class="ani" swiper-animate-effect="fadeInUp">
+						<p>
+							<span>|首次设置五大区域评选  深挖地区晋级全国</span>
+							<br />开展全国范围内的评选，精准挖掘地方黑马，启动全国五大区域评选，各区域将沿袭往届全国赛区评选的权威样貌。
+						</p>
+						<p>
+							<span>|升级严谨的评审标准  树立更高财经行业标杆</span>
+							<br />评选范围覆盖整个中国商业圈层，汇聚国内经济顶尖大咖，更为严格的评审标准，精准发掘中国经济代表力量。
+						</p>
+						<p>
+							<span>|联合众多影响力平台  延续打造经济界奥斯卡</span>
+							<br />全国顶尖学术，商业，媒体平台联合助阵，令评选项目掷地有声，在经济界广泛被认可，成为极具影响力的经济界评选。
+						</p>
+						</div>
+					</div>
+				</div>
+				<div class="main swiper-slide" id="pingan_3">
+					<div id="ph">
+
+					</div>
+					<div class="text ani" swiper-animate-effect="fadeInRight">
+						<p>
+							<span>[8月10日]<br /></span> 启动项目，公开提名区域候选人
+							<br /><br />
+							<span>[9月10日]<br /></span> 公布第一批候选人，提名截止，保留评委提名
+							<br /><br />
+							<span>[9月15日] <br /></span> 公布第二批候选人，启动仪式，进入网络票选
+							<br /><br />
+							<span>[10月10日]<br /></span> 区域网络投票结束，评委会复评
+							<br /><br />
+							<span>[11月30日]<br /></span> 公布名单，区域颁奖典礼，推送全国候选人
+						</p>
+					</div>
+				</div>
+				<div class="main swiper-slide" id="pingan_4">
+					<div class="input ani" swiper-animate-effect="fadeIn">
+						<form>
+							<br />
+							<label>参选单位</label><br />
+							<input /><br /><br />
+							<label>参选人员</label><br />
+							<input /><br /><br />
+							<label>联系人</label><br />
+							<input /><br /><br />
+							<label>联系方式</label><br />
+							<input />
+							<div id="submit"><input type="submit" value="确 认"></div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/swiper-3.4.2.min.js"></script>
+		<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+
+	</body>
+
+</html>

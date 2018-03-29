@@ -1,0 +1,93 @@
+*{
+	margin-bottom: 0;
+}
+.main {
+	margin: 0 auto;
+	width: 1040px;
+}
+
+p {
+	margin: 16px 0;
+	line-height: 1.5em;
+}
+
+.contentIn {
+	overflow: hidden;
+}
+
+.content {
+	width: 650px;
+	float: left;
+}
+
+.contentIn {
+	padding: 40px 0;
+}
+
+.contentIn .image {
+	float: left;
+	padding-right: 20px;
+}
+
+.contentIn span {
+	font-family: "微软雅黑";
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.contentIn a {
+	display: block;
+	float: right;
+	color: red;
+}
+
+.recommend {
+	margin-left: 70px;
+	width: 300px;
+	float: left;
+	margin-top: 40px;
+}
+
+li {
+	list-style-type: none;
+}
+
+.recommend p {
+	margin-top: 6px;
+	font-size: 0.75em;
+}
+
+h {
+	font-family: "微软雅黑";
+}
+h4{
+	position: relative;
+}
+.order {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	text-align: center;
+	color: white;
+	background-color: rgb(181,181,181);
+	position: absolute;
+	font-size: 10px;
+	line-height: 19px;
+	left: -27px;
+	margin-bottom: 0;
+}
+
+.recommend span {
+	font-size: 0.75em;
+	color: orange;
+	font-weight: bold;
+}
+
+.recommend hr {
+	border:none;
+	border-top:1px solid orange;
+}
+
+.clearfloat {
+	clear: both;
+}

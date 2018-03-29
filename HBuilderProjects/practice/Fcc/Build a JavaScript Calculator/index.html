@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			div {
+				/*border: 1px palevioletred dotted;*/
+				background: purple;
+				box-sizing: border-box;
+				text-align: center;
+				line-height: 3em;
+				border-radius: 2px;
+			}
+			#main{
+				width: 310px;
+				height: 360px;
+				/*padding-right: 10px;*/
+				/*padding-left: 10px;*/
+				padding-top: 33px;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-content: space-around;
+			}
+			#answer{
+				height: 35px;
+				flex-basis: 97%;
+				text-align: right;
+				line-height: 2em;
+				background-color: cornsilk;
+				padding-right: 10px;
+			}
+			#main div{
+				background-color:plum;
+			}
+		</style>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var ovo="";
+				var ans=0;
+				$("#answer").siblings().css({
+					"float":"left",
+					"flex-basis":"22%",
+//					"height":"52px",
+//					"margin":"3px"
+				});
+				$("#answer").siblings().mouseover(function(){$(this).css("opacity","0.5")});
+				$("#answer").siblings().mouseleave(function(){$(this).css("opacity","1")});
+				$("#iac").click(function(){
+					ovo="0";	
+					$("#answer").text(ovo);
+				});
+				$("#i0,#i1,#i2,#i3,#i4,#i5,#i6,#i7,#i8,#i9,#ichu,#ijia,#ijian,#icheng,#iyu").click(function(e){
+					if(ovo==="0"){ovo="";}
+					ovo+=e.target.textContent;
+					$("#answer").text(ovo);
+				});
+				$("#idian").click(function(e){
+					ovo+=e.target.textContent;
+					$("#answer").text(ovo);
+				});
+				$("#ice").click(function(){
+					ovo=ovo.slice(0,-1);	
+					$("#answer").text(ovo);
+				});
+				$("#iend").click(function(){
+					try{
+						ans=eval(ovo).toFixed(9);
+						$("#answer").text(ans);
+						while($("#answer").text().indexOf(".")&&$("#answer").text().slice(-1)==="0"||$("#answer").text().slice(-1)==="."){
+							$("#answer").text(ans);
+							ans=$("#answer").text().slice(0,-1);
+							$("#answer").text(ans);
+							console.log(ans);
+						}
+						$("#answer").text(ans);
+						ovo="0";
+					}catch(e){
+						$("#answer").text("Error!");
+						ovo="";
+					}
+					
+				});
+				$("#ians").click(function(){
+					if(ovo==="0"){ovo="";}
+					ovo+=ans;
+					$("#answer").text(ovo);
+				});
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div id="main">
+			<div id="answer">0</div>
+			<div id="iac">AC</div>
+			<div id="ice">CE</div>
+			<div id="iyu">%</div>
+			<div id="ichu">/</div>
+			<div id="i7">7</div>
+			<div id="i8">8</div>
+			<div id="i9">9</div>
+			<div id="icheng">*</div>
+			<div id="i4">4</div>
+			<div id="i5">5</div>
+			<div id="i6">6</div>
+			<div id="ijian">-</div>
+			<div id="i1">1</div>
+			<div id="i2">2</div>
+			<div id="i3">3</div>
+			<div id="ijia">+</div>
+			<div id="idian">.</div>
+			<div id="i0">0</div>
+			<div id="ians">Ans</div>
+			<div id="iend">=</div>
+		</div>
+	</body>
+
+</html>

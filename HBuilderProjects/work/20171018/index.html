@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="text/css" href="css/swiper-3.4.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide a1">
+					<img class="ani" swiper-animate-effect="fadeIn" id="a11" src="images/t1.png" />
+				</div>
+				<div class="swiper-slide a2">
+					<img class="ani" swiper-animate-effect="fadeIn" id="a21" src="images/a2_02.png" />
+					<img class="ani" swiper-animate-effect="fadeInUp" id="a22" src="images/a2_03.png" />
+				</div>
+				<div class="swiper-slide a3">
+					<img class="ani" swiper-animate-effect="fadeIn" id="a31" src="images/a3_03.png" />
+					<img class="ani" swiper-animate-effect="fadeInUp" id="a32" src="images/a3_04.png" />
+				</div>
+				<div class="swiper-slide a4">
+					<img src="images/a4_02.png"  id="a41"/>
+					<!--<img src="images/a4_05.png"/>-->
+					<div class="ani" swiper-animate-effect="bounceInRight" id="a44"></div>
+					<img class="ani" swiper-animate-effect="fadeIn" id="a42" src="images/a444_03.png" />
+					<img class="ani" swiper-animate-effect="fadeIn" id="a43" src="images/a4_10.png"/>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper-3.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.animate1.0.2.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			$(document).ready(function () {
+				var mySwiper = new Swiper('.swiper-container', {
+					direction: 'vertical',
+					loop: false,
+					onInit: function(swiper) { //Swiper2.x的初始化是onFirstInit
+						swiperAnimateCache(swiper); //隐藏动画元素 
+						swiperAnimate(swiper); //初始化完成开始动画
+					},
+					onSlideChangeEnd: function(swiper) {
+						swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html> 

@@ -1,0 +1,67 @@
+body{
+	padding: 0;
+	margin: 0;
+	font-size: 19.5px;
+	font-family: "微软雅黑", "黑体", "宋体";
+	color: #000;
+}
+.kvContainer{
+	margin: 0 auto;
+	width: 1010px;
+	overflow: hidden;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.kvNav{
+	height: 239px;
+}
+.kvNav li{
+	float: left;
+	width: 91px;
+	margin-right: 10px;
+}
+.kvNav p{
+	margin: 10px auto 2px auto;
+	width: 20px;
+	line-height: 1.1em;
+}
+.kvImg{
+	float: left;
+	height: 307px;
+	background-color: #abd43a;
+	margin-right: 7px;
+	margin-bottom: 6px;
+}
+.kvImg1{
+	width:543px;
+}
+.kvImg2{
+	width: 448px;
+}
+.kvImg3{
+	width: 391px;
+}
+.kvImg4{
+	width: 602px;
+}
+.kvNavChoosed{
+	color: #ABD43A;
+}
+.kvHide{
+	display: none;
+} 
+.kvDis{
+	display: block!important;
+}
+.kvNavChoosed:after{
+	content: "—————————————";
+	background: url(../img/下箭头_33_02.png) no-repeat;
+	color: transparent;
+	
+}
+.kvDisplayer>div{
+	display: none;
+}

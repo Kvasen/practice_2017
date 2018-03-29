@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			body {
+				background: gray;
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				font-family: "微软雅黑";
+				font-size: 2em;
+				overflow: hidden;
+			}
+			
+			#start {
+				background-color: deepskyblue;
+				color: white;
+				border-radius: 9999px;
+				margin-bottom: 20px;
+				width: 300px;
+			}
+			
+			#outborder {
+				border: 2px solid orange;
+				width: 310px;
+				height: 310px;
+				border-radius: 50%;
+				position: relative;
+				overflow: hidden;
+				margin-top: 20px;
+			}
+			
+			.main {
+				/*border:2px solid greenyellow;*/
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				position: absolute;
+				margin: auto;
+				overflow: hidden;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				background-color: greenyellow;
+				font-size: 1.7em;
+				/*z-index: 1*/
+			}
+			
+			p {
+				position: relative;
+				z-index: 3;
+				text-shadow: 0px 0px 5px gainsboro;
+			}
+			
+			#fill {
+				display: block;
+				background: gray;
+				height: 300px;
+				width: 100%;
+				float: left;
+				position: relative;
+				z-index: 2;
+			}
+			
+			#work,
+			#break {
+				width: 300px;
+				text-shadow: 0px 0px 5px grey;
+				color: lightgreen;
+			}
+		</style>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var workTime = $("#work span").text();
+				var breakTime = $("#break span").text();
+				var n = 0;
+				var go1 = 0;
+				var go2 = 0;
+				var tim;
+				workFlag = 1;
+				var h = 1;
+				var tPt = 1 / (workTime * 60);
+				var restFlag = 0;
+				var init = function() {
+					$(".main span:first").text(workTime);
+					$(".main span:last").text("00");
+					$("#fill").height(300);
+					h = 1;
+					restFlag = 0;
+					$(".main p:first").text("Setting...");
+				}
+				$("#work a:first").click(function() {
+					if(workFlag) {
+						if($(this).next().text() > 1) {
+							workTime--;
+							$(this).next().text(workTime);
+							init();
+						}
+					}
+				});
+				$("#work a:last").click(function() {
+					if(workFlag) {
+						workTime++;
+						$(this).prev().text(workTime);
+						init();
+					}
+				});
+				$("#break a:first").click(function() {
+					if(workFlag) {
+						if($(this).next().text() > 1) {
+							breakTime--;
+							$(this).next().text(breakTime);
+							init();
+						}
+					}
+				});
+				$("#break a:last").click(function() {
+					if(workFlag) {
+						breakTime++;
+						$(this).prev().text(breakTime);
+						init();
+					}
+				});
+				var clock = function() {
+					return setInterval(function() {
+						go2 = $(".main span:last").text();
+						go1 = $(".main span:first").text();
+						if(go2 === "00") {
+							go2 = 59;
+							go1--;
+							$(".main span:first").text(go1);
+						} else {
+							go2--;
+						}
+						if(parseInt(go2) > 9) {
+							$(".main span:last").text(go2);
+						} else {
+							go2 = "0" + go2;
+							$(".main span:last").text(go2);
+						}
+						if(restFlag) {
+							$(".main").css("background-color", "darkorange");
+							$(".main p:first").text("Resting~");
+							tPt = 1 / (breakTime * 60);
+							h = (h - tPt);
+							$("#fill").height(300 * h);
+						} else {
+							$(".main").css("background-color", "greenyellow");
+							$(".main p:first").text("Working!");
+							tPt = 1 / (workTime * 60);
+							h = (h - tPt);
+							$("#fill").height(300 * h);
+						}
+						if(go2 === "00" && go1 === "0") {
+							h = 1;
+							if(restFlag) {
+								$(".main span:first").text(workTime);
+							} else {
+								$(".main span:first").text(breakTime);
+							};
+							restFlag = !restFlag;
+						}
+					}, 20); ///////////////////////////////////////////
+				}
+//				$("#start").click(function() {
+//					//					$(".main p:first").text("Working...");
+//					//					console.log(n++);
+//					if(workFlag) {
+//						tim = clock();
+//						workFlag = 0;
+//					}
+//				});
+				$(".main").click(function() {
+
+					if(workFlag) {
+						tim = clock();
+						workFlag = 0;
+					} else {
+						clearInterval(tim);
+						$(".main p:first").text("Pause!");
+						workFlag = 1;
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<!--<div id="start">Start!</div>-->
+		<div id="work">
+			工作时间:
+			<a> - </a><span>1</span>
+			<a> + </a>
+		</div>
+		<div id="break">
+			休息时间:
+			<a> - </a><span>2</span>
+			<a> + </a>
+		</div>
+		<div id="outborder">
+			<div class="main">
+				<a id="fill"></a>
+			</div>
+			<div class="main">
+				<p><br />Welcome<br /><br /></p>
+				<p><span>1</span>:<span>00</span></p>
+			</div>
+		</div>
+	</body>
+
+</html>

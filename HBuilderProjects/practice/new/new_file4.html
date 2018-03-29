@@ -1,0 +1,154 @@
+<html>
+
+	<head>
+		<title></title>
+	</head>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		
+		#a1 {
+			background-color: aquamarine;
+			height: 1200px;
+		}
+		
+		#a2 {
+			background-color: coral;
+			height: 1600px;
+		}
+		
+		#a3 {
+			background-color: crimson;
+			height: 1000px;
+		}
+		
+		#a4 {
+			background-color: chartreuse;
+			height: 1800px;
+		}
+		
+		nav {
+			position: fixed;
+			right: 0;
+			top: 20%;
+			background: black;
+			height: 300px;
+			width: 200px;
+		}
+		
+		ul {
+			margin: 70px auto;
+			padding: 0;
+			color: #ccc;
+			font-size: 24px;
+			font-weight: bold;
+			font-family: "微软雅黑";
+			text-align: center;
+			/*display: -webkit-flex;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			align-content:  space-around;*/
+		}
+		
+		li {
+transition: all 2s;
+-moz-transition: all 2s; /* Firefox 4 */
+-webkit-transition: all 2s; /* Safari 和 Chrome */
+-o-transition: all 2s; /* Opera */
+			margin: 10px auto;
+			padding: 0;
+			height: 40px;
+			width: 180px;
+			line-height: 40px;
+			list-style: none;
+			border: 2px solid #ccc;
+			border-radius: 10px;
+			color: #ccc;
+			font-size: 24px;
+			font-weight: bold;
+			font-family: "微软雅黑";
+			text-align: center;
+		}
+		
+		.active {
+			margin: 10px auto;
+			border-color: gold;
+			color: gold;
+			width: 150px;
+			opacity: 0.7;
+transition: all 2s;
+-moz-transition: all 2s; /* Firefox 4 */
+-webkit-transition: all 2s; /* Safari 和 Chrome */
+-o-transition: all 2s; /* Opera */
+		}
+	</style>
+
+	<body>
+		<nav>
+			<ul>
+				<li class="active" id="nav1">1</li>
+				<li id="nav2">2</li>
+				<li id="nav3">3</li>
+				<li id="nav4">4</li>
+			</ul>
+		</nav>
+		<div id="a1">1</div>
+		<div id="a2">2</div>
+		<div id="a3">3</div>
+		<div id="a4">4</div>
+
+		<script type="text/javascript">
+			var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+			var ha1 = document.getElementById("a1").offsetTop;
+			var ha2 = document.getElementById("a2").offsetTop;
+			var ha3 = document.getElementById("a3").offsetTop;
+			var ha4 = document.getElementById("a4").offsetTop;
+			var liArr = [ha1, ha2, ha3, ha4];
+			var nav = document.getElementsByTagName("li");
+			function tab() {
+				scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+								console.log(scrollTop);
+				for(var i = liArr.length - 1; i >= 0; i--) {
+					if(scrollTop >= liArr[i]) {
+						for(var k = 0; k < liArr.length; k++) {
+							nav[k].className = "";
+						}
+						nav[i].className = "active";
+						break;
+						
+					}
+				}
+			}
+			window.onmousewheel = tab;
+//			function(){
+//				tab();
+//			};
+			document.getElementsByTagName("ul")[0].onclick = function(ev) {
+				var ev = ev || window.event;
+				var target = ev.target || ev.srcElement;
+				if(target.nodeName.toLocaleLowerCase() == 'li') {
+					//              	console.log(target.id);
+					switch(target.id) {
+						case 'nav1':
+							document.body.scrollTop = ha1;tab();
+							break;
+						case 'nav2':
+							document.body.scrollTop = ha2;tab();
+							break;
+						case 'nav3':
+							scrollTo(0,ha3);tab();
+							break;
+						case 'nav4':
+							document.body.scrollTop = ha4;tab();
+							break;
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

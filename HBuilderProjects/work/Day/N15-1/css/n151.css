@@ -1,0 +1,44 @@
+body{
+	width:1920px;
+	height: 1015px;
+}
+.main{
+	margin: 153px 456px 53px 453px;
+	width:1011px;
+	height: 809px;
+}
+.main>div{
+	width: 327px;
+	margin: 0 5px 13px;
+	float: left;
+}
+.row-1{
+	height: 300px;
+}
+.row-2{
+	height: 483px;
+}
+.row-2-1{
+	height: 215px;
+	margin-bottom: 9px;
+}
+.row-2-2{
+	height: 259px;
+}
+.row-1,.row-2,.row-2-1,.row-2-2{
+	background: #7e6c62;
+	position: relative;
+}
+.img{
+}
+.txt{
+	position: absolute;
+	bottom: 0;
+	height: 32px;
+	width: 100%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 2em;
+	background: #38333a;
+	color: white;
+}

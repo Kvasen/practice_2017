@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/rqm.css" />
+		<link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js" ></script>
+		<script type="text/javascript" src="js/jquery.color.js" ></script>
+	
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="quote"><i class="fa fa-quote-left pull-left"></i>
+				<div class="quote-text"><p id="text">Quete</p></div>
+				<div class="quote-author"><p id="author">author</p></div>
+			</div>
+			<div class="icon"><i class="fa fa-twitter"></i></div>
+			<div class="icon" title="tweet~"><i class="fa fa-tumblr"></i></div>
+			<div class="getQuote">New quote</div>
+			<div class="clearfloat"></div>
+		</div>
+		
+		<script>
+			$(document).ready(function(){
+				var colorList=['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
+				var randomColor="grey";
+				function changeColor(){
+//					var i;
+					randomColor=colorList[Math.floor(Math.random()*colorList.length)];
+					$("html,body,.getQuote,.icon").animate({backgroundColor:randomColor},1000);
+				
+
+				}
+				$(".getQuote").click(function(){changeColor()});
+				
+				
+				
+			});
+			
+		</script>
+	</body>
+
+</html>

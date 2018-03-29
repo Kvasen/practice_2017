@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<style type="text/css">
+			body,
+			html {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+				font-size: 625%;
+				font-family: "微软雅黑";
+			}
+			
+			.p {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				height: 100%;
+				margin: 0 auto;
+				overflow: hidden;
+			}
+			
+			@media screen and (min-width: 640px) {
+				.p {
+					width: 640px;
+					height: 1138px;
+				}
+			}
+			
+			.btn {
+				display: block;
+				margin: 0 auto;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				border-style: none;
+				outline: none;
+				background-color: transparent;
+			}
+			
+			.p0 {
+				background-image: url(img/p0.jpg);
+			}
+			
+			.p0 .btn {
+				width: 3.03rem;
+				height: 0.66rem;
+				margin-top: 0.78rem;
+				background-image: url(img/p0_btn.png);
+			}
+			
+			.p .loading {
+				width: 0.86rem;
+				height: 0.55rem;
+				margin: 0 auto;
+				margin-top: 7.48rem;
+				font-size: 0.31rem;
+				color: #FFF;
+				text-align: center;
+			}
+			
+			.p1 {
+				background-image: url(img/p1.jpg);
+			}
+			
+			.p2 {
+				background-image: url(img/p2.jpg);
+			}
+			
+			.p3 {
+				background-image: url(img/p3.jpg);
+			}
+			
+			.p4 {
+				background-image: url(img/p4.jpg);
+			}
+			
+			.p5 {
+				background-image: url(img/p5.jpg);
+			}
+			
+			.p6 {
+				background-image: url(img/p6.jpg);
+			}
+			
+			.p6 .v {
+				width: 86.7%;
+				height: 2.96rem;
+				background: #333;
+				margin: 0 auto;
+				margin-top: 16%;
+			}
+			
+			.p6 .btn {
+				width: 45%;
+				height: 1.03rem;
+				margin-top: 0.63rem;
+				background-image: url(img/p6_btn.png);
+			}
+			
+			.p7 {
+				background-image: url(img/p7.jpg);
+			}
+			
+			.p7 img {
+				display: block;
+				float: left;
+			}
+			
+			.p7 img:nth-of-type(1) {
+				margin-top: 3.67rem;
+				width: 2.15rem;
+				height: 2.56rem;
+			}
+			
+			.p7 img:nth-of-type(2) {
+				margin-top: 3.67rem;
+				width: 1.98rem;
+				height: 2.56rem;
+			}
+			
+			.p7 img:nth-of-type(3) {
+				margin-top: 3.67rem;
+				width: 2.26rem;
+				height: 2.56rem;
+			}
+			
+			.p7 img:nth-of-type(4) {
+				width: 3.19rem;
+				height: 2.19rem;
+			}
+			
+			.p7 img:nth-of-type(5) {
+				width: 3.20rem;
+				height: 2.19rem;
+			}
+			
+			.p8 {
+				position: relative;
+			}
+			
+			.p8 .bg {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-color: rgba(0, 0, 0, .85);
+			}
+			
+			.p8 .bg img {
+				margin: 0;
+				height: 100%;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="p0 p">
+			<div class="loading">05%</div>
+			<button class="btn"></button>
+		</div>
+		<div class="p1 p"></div>
+		<div class="p2 p"></div>
+		<div class="p3 p"></div>
+		<div class="p4 p"></div>
+		<div class="p5 p"></div>
+		<div class="p6 p">
+			<div class="v"></div>
+			<button class="btn"></button>
+		</div>
+		<div class="p7 p">
+			<img src="img/p7_1.png" alt="法国圣埃蒂安市" />
+			<img src="img/p7_2.png" alt="美国纽瓦克市" />
+			<img src="img/p7_3.png" alt="德国波鸿市" />
+			<img src="img/p7_4.png" alt="韩国井邑市" />
+			<img src="img/p7_5.png" alt="新西兰霍克斯湾地区" />
+		</div>
+		<div class="p8 p7 p">
+			<img src="img/p7_1.png" alt="法国圣埃蒂安市" />
+			<img src="img/p7_2.png" alt="美国纽瓦克市" />
+			<img src="img/p7_3.png" alt="德国波鸿市" />
+			<img src="img/p7_4.png" alt="韩国井邑市" />
+			<img src="img/p7_5.png" alt="新西兰霍克斯湾地区" />
+			<div class="bg">
+				<img src="img/p8.png" alt="很高兴与您缔结友好" />
+			</div>
+		</div>
+
+		</div>
+		<script type="text/javascript">
+			(function(doc, win) {
+				var docEl = doc.documentElement,
+					resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+					recalc = function() {
+						var clientWidth = docEl.clientWidth;
+						if(!clientWidth) return;
+						if(clientWidth >= 640) {
+							docEl.style.fontSize = '100px';
+						} else {
+							docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+						}
+					};
+
+				if(!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+	</body>
+
+</html>

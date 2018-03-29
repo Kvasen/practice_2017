@@ -1,0 +1,78 @@
+body,div,p,h1,h2,h3,h4,h5,h6{
+	margin: 0 auto;
+	padding: 0;
+}
+a{
+	color: #73322E;
+	text-decoration: none;
+}
+.kvContainer{
+	width: 1040px;
+}
+.kvTitle{
+	height: 130px;
+}
+.blank{
+	height: 70px;
+}
+.kvExhibition,.kvPerformance,.kvMore{
+	overflow: hidden;
+}
+.kvExhibit{
+	width: 237px;
+	height: 352px;
+	margin-top:15px;
+	margin-right: 18px;
+	text-align: center;
+	float: left;
+}
+.kvExhibit img{
+	width: 237px;
+	height: 311px;
+	background-color: #73322e;
+}
+.kvExhibit h1{
+	padding: 8px;
+	font-size: 24px;
+	font-family: "楷体";
+}
+.kvRepertoire{
+	float: left;
+	width: 342px;
+	height: 282px;
+	font-size: 18px;
+}
+.kvRepertoire h2{
+	padding: 12px;
+	font-size: 18px;
+	font-family: "黑体";
+	color: #73322E;
+}
+.kvRepertoire img{
+	width: 158px;
+	height: 201px;
+	background-color: #73322e;
+	float: left;
+}
+.kvRepertoire p{
+	float: left;
+	padding: 0 14px;
+	width: 140px;
+	height: 201px;
+	word-break: break-all;
+}
+.kvMorePer{
+	float: left;
+	margin: 29px 53px 0 0;
+	width: 293px;
+	height: 93px;
+	background-image: url(../img/精彩江苏_14.png);
+	background-repeat:no-repeat;	
+	background-position: left bottom;
+}
+.kvMorePer p{
+	padding-left: 62px;
+	text-align: center;
+	font-size: 24px;
+	line-height: 92px;
+}

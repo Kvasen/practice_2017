@@ -1,0 +1,184 @@
+<html>
+<head>
+	<title> my page </title>
+	<meta charset=utf-8>
+</head>
+
+<body>
+<h1>基础</h1>
+<p>
+html为hyper text markup language超文本标记语言，标记页面中元素是什么<br>
+css为html定义好的元素赋予格式，即如何呈现<br>
+每一个html页面包括html,head,body三个最重要的标记<br>
+p为段落<br>
+br分行，在一句话结束的位置输入就可以了，不需要slash，br也可以在css里实现<br>
+h1是一级标题，如本段的“基础”<br>
+<h2>我是二级标题h2</h2>
+<h2>我也是二级标题h2</h2>
+<h3>我是三级标题h3</h3>
+
+</p>
+
+<h1>文本标记（我是一级标题）：</h1>
+<p>
+a<sup>2</sup> + b<sub>0</sub><br>
+sup上标,sub下标<br>
+</p>
+
+<p>弗里德曼(<b>b加粗 <i>Friedman i表示斜体</i></b>)
+
+要非常深入地<del>del把数字加删除线</del>和体验才
+</p>
+<p>
+<em>
+em表示强调
+</em>
+<strong>
+strong表示着重
+</strong>
+<dfn>
+dfn  :definition定义
+</dfn>
+<code>
+code 表示是代码
+</code>
+<samp>
+samp表示是例子，sample
+</samp>
+<kbd>
+kbd   :keyboard是用户输入
+</kbd>
+<var>
+var是变量
+</var>
+<cite>
+cite是引用
+</cite><br>
+
+<hr width=90% align=left size=3>
+hr width=50% align=left size=2，代表华丽丽的分割线,width表示长度，可选绝对值或百分比,以及靠左或右
+
+
+<abbr title="中华人民共和国">PRC</abbr><br>
+abbr表示PRC是中华人民共和国的缩写,鼠标放在abbr上可以显示全称。
+
+<bdo dir=rtl>bdo可以将文字变成从右向左显示，可以嵌套。舞厅被装饰城南方庄园的风格。</bdo>
+<br>
+
+a&lt;2&gt; 特殊符号要用特殊字母组合来表示
+&amp;&nbsp;&nbsp;&amp;
+<br>
+
+l&uuml; 给u上加两点（看本页面代码）
+l&Uuml; 大写字母加两点
+<br>
+<p>
+address 不仅是地址，还可被浏览器读取和检索
+<address>
+<blockquote>
+rm 701, futian, shenzhen<br>
+广东<br>
+中国<br>
+blockquote用于缩进，可嵌套，q加个引号<br>
+
+</blockquote>
+</address>
+</p>
+
+<pre>
+pre 用于保留原文本的格式
+比如
+	这里的tab和分行
+	都被保留下来
+	有点奇怪
+</pre>
+
+<h1>这里是列表的表示方法：</h1>
+<p>
+<ul>简单的列表
+	<li>ul表示无顺序的列表；</li>
+	<li>li表示list里元素；</li>
+	<li>ol表示有顺序的列表；</li>
+		<ol>
+			<li>ul和ol可以互相嵌套</li>
+				<ul>
+					<li>还可以继续嵌套</li>
+				</ul>
+			<li>ol的顺序用数字表示</li>
+		</ol>
+	<li>注意列表要有结束</li>
+</ul>
+</p>
+
+<p>
+<dl>dl表示一个词典
+	<dt>dt表示要解释的词条</dt>
+	<dd>dd表示词条的定义</dd>
+	<dt>还可以有多个词条</dt>
+	<dd>很有趣吧</dd>
+	<dt>西瓜</dt>
+	<dd>一种大而圆的绿色水果</dd>
+</dl>
+
+</p>
+<h1>图片的显示：</h1>
+<p>
+img 将图片作为一个字符，基线与前后文字平齐。width与height调整图片长宽，<br>
+可选绝对值或百分比。src引用图片地址；还可以输入为其它网站上图片的链接地址。<br>
+width 和height主要作用是给图片留下位置<br>
+usemap建立映射
+<img src="flower.jpg" width=“150” height="150" usemap="#map"/>
+<map name="map">
+	<area shape="rect" coords="0,0,75,150"/>
+	<area shape="rect" coords="0,75,75,150"/>
+</map>
+
+</p>
+<h1>链接的显示：</h1>
+<p>
+iframe在网页开个窗口，显示其它网站的内容，/iframe不能省。也有width 和height属性<br>
+<iframe src="http://news.163.com" width="50%" height="30%"></iframe>
+</p>
+
+<p>
+a表示链接，属性href输入地址。如果没有协议名称（http://），html会以为链接指向<br>
+当前目录下的一个文件。还可以指向本页面的某一段，如#here<br>
+target属性决定在新窗口或本窗口打开链接,注意下划线<br>
+href:hyper reference<br>
+<a href="http://news.163.com" target=_blank>网易新闻</a>
+<a href="#here">本页面引用</a>
+</p>
+
+<p id="here">
+<i>id给段落一个名字</i>
+</p>
+
+table是表格,有属性border=1显示表格线<br>
+caption:表格名
+tr:内容，向下包容th和td<br>
+th:表头，如果表格数据量大，前后添加thead,类似还有tbody,tfoot。大表格必用<br>
+td:内容,属性rowspan，colspan合并单元格<br>
+<table border=1>
+	<caption>table 1</caption>
+	<thead>	
+	<tr>
+		<th>iOS</td>
+		<th>chinese</td>
+		<th>english</td>
+	</tr>
+	</thead>
+	<tr>
+		<td>iOS5</td>
+		<td>yes</td>
+		<td>yes</td>
+	</tr>
+
+	<tr>
+		<td>iOS9</td>
+		<td>yes</td>
+		<td>no</td>
+	</tr>
+</table>
+
+</body>
+</html>

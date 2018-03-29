@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> </title>
+<link rel="stylesheet" href="http://n.sinaimg.cn/jiangsu/a70720e1/20170913/swiper-3.4.2.min.css">
+<link rel="stylesheet" href="http://n.sinaimg.cn/jiangsu/a70720e1/20170913/animate.min.css" />
+<script src="http://n.sinaimg.cn/jiangsu/a70720e1/20170913/swiper-3.4.2.min.js"></script>
+<script src="http://n.sinaimg.cn/jiangsu/a70720e1/20170913/swiper.animate1.0.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://8.baidu.com/assets/js/component/adaptive/adaptive-version2.js"></script>
+<script type="text/javascript" src="http://n.sinaimg.cn/jiangsu/a70720e1/20160518/jquery-2.1.1.min.js"></script>
+
+
+<script>
+    window['adaptive'].desinWidth = 640;
+    window['adaptive'].baseFont = 24;
+    window['adaptive'].maxWidth = 480;
+    //      window['adaptive'].scaleType = 2;
+    window['adaptive'].init();
+    // 自动播放音乐效果，解决微信自动播放问题
+    function musicInWeixinHandler() {
+
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            musicPlay(true);
+
+        }, false);
+        document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+    }
+    document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+
+    function musicPlay(isPlay) {
+        var media = document.querySelector('#aud');
+
+        if (isPlay && media.paused) {
+
+            media.play();
+
+        }
+        if (!isPlay && !media.paused) {
+            media.pause();
+        }
+
+    }
+</script>
+<style>
+html, body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #fff;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.main-info {
+    height: 0.88rem;
+    padding-bottom: 0.24rem;
+}
+
+.fund-info {
+    position: relative;
+    font-weight: normal;
+    padding: 0.2rem 0;
+    padding-right: 1.7rem;
+    padding-left: 0.23rem;
+    font-size: 0.32rem;
+    line-height: 1;
+}
+	/*1rem=100px*/
+.swiper-container {
+    width: 6.4rem;          
+    height: 100%;
+
+    background-size: cover;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ani {
+    position: absolute;
+}
+/*箭头*/
+.arrow {
+    -webkit-animation: arrow 1.5s ease-out infinite 0s;
+    animation: arrow 1.5s ease-out infinite 0s;
+    display: inline-block;
+    width: 1rem;
+    height: .58rem;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    margin-left: -.5rem;
+    z-index: 999;
+}
+
+@-webkit-keyframes arrow {
+    0% {
+        opacity: 1;
+        -webkit-transform: translate3d(0,0,0)
+    }
+
+    50% {
+        opacity: 1;
+        -webkit-transform: translate3d(0,-20px,0)
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(0,-20px,0)
+    }
+}
+
+@keyframes arrow {
+    0% {
+        opacity: 1;
+        transform: translate3d(0,0,0)
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate3d(0,-20px,0)
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(0,-20px,0)
+    }
+}
+
+@-webkit-keyframes moveRo {
+    from {
+        -webkit-transform: rotate(360deg);
+    }
+
+    to {
+        -webkit-transform: rotate(-360deg);
+    }
+}
+
+@keyframes moveRo {
+    from {
+        transform: rotate(-360deg)
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes openRo {
+    from {
+    }
+
+    to {
+        -webkit-transform: translateY(100%);
+    }
+}
+
+@keyframes openRo {
+    from {
+    }
+
+    to {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+}
+
+@-webkit-keyframes openIconRo {
+    0% {
+        -webkit-transform: translateY(100%);
+        opacity: 0;
+    }
+
+    50% {
+        -webkit-transform: translateY(0%);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+@keyframes openIconRo {
+    0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    50% {
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+.music {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 90%;
+    bottom: 10px;
+    z-index: 10003;
+}
+
+.open {
+    /*-webkit-animation: moveIconRo ease 3.5s both infinite;*/
+    -webkit-animation: moveRo linear 3.5s  infinite;
+    animation-delay: 0s;
+}
+
+.icon-music {
+    width: 25px;
+    height: 25px;
+    background: url(http://n.sinaimg.cn/7106709f/20150925/icon-muisc.png);
+    background-size: 100% 100%;
+    display: block;
+}
+
+.music-span {
+    position: absolute;
+    top: -5px;
+    left: 6px;
+    width: 12px;
+    height: 12px;
+    background: url(http://n.sinaimg.cn/7106709f/20150925/music-span.png);
+    background-size: 100% 100%;
+    -webkit-animation: openIconRo ease 1.2s both infinite;
+    animation: openRo ease 1.2s both infinite;
+    z-index: -1;
+}
+
+.music_text {
+    color: #000;
+    margin-left: 5px;
+    font-size: 20px;
+    opacity: 0;
+}
+
+
+/*动画*/
+.xb {
+    -webkit-animation: roll 2s infinite 2s;
+    -webkit-transform-origin: top;
+}
+
+.yb {
+    -webkit-animation: roll 3s infinite 4s;
+    -webkit-transform-origin: top;
+}
+
+.sb {
+    -webkit-animation: roll 2s infinite 6s;
+    -webkit-transform-origin: bottom;
+}
+
+.db {
+    -webkit-animation: lrdf 2s infinite 1s;
+    -webkit-animation-direction: alternate;
+}
+
+.db1 {
+    -webkit-animation: lang1 2s infinite 1s;
+    -webkit-animation-direction: alternate;
+}
+
+.db2 {
+    -webkit-animation: lang2 2s infinite 1s;
+    -webkit-animation-direction: alternate;
+}
+
+.ro {
+    -webkit-animation: roll1 3s infinite 1s;
+    -webkit-transform-origin: 50%;
+}
+
+.ud {
+    -webkit-animation: udf 2s infinite 2s;
+}
+
+@-webkit-keyframes roll {
+    0% {
+        -webkit-transform: rotate(7deg)
+    }
+
+    50% {
+        -webkit-transform: rotate(-7deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(7deg)
+    }
+}
+
+@-webkit-keyframes roll1 {
+    0% {
+        -webkit-transform: rotate(0deg)
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes xxf {
+    0% {
+        -webkit-transform: translate(0,0)
+    }
+
+    100% {
+        -webkit-transform: translate(-50px,50px)
+    }
+}
+
+@-webkit-keyframes udf {
+    0% {
+        -webkit-transform: translateY(10px)
+    }
+
+    50% {
+        -webkit-transform: translateY(-10px)
+    }
+
+    100% {
+        -webkit-transform: translateY(10px)
+    }
+}
+
+@-webkit-keyframes lrdf {
+    0% {
+        -webkit-transform: translateX(30px)
+    }
+
+    50% {
+        -webkit-transform: translateX(0px)
+    }
+
+    100% {
+        -webkit-transform: translateX(-30px)
+    }
+}
+
+@-webkit-keyframes lrdf1 {
+    0% {
+        -webkit-transform: translateX(-30px)
+    }
+
+    50% {
+        -webkit-transform: translateX(0px)
+    }
+
+    100% {
+        -webkit-transform: translateX(30px)
+    }
+}
+
+@-webkit-keyframes lang1 {
+    0% {
+        -webkit-transform: translateX(30px)
+    }
+
+    100% {
+        -webkit-transform: translateX(-70px)
+    }
+}
+
+@-webkit-keyframes lang2 {
+    0% {
+        -webkit-transform: translateX(-70px)
+    }
+
+    100% {
+        -webkit-transform: translateX(30px)
+    }
+}
+/*视频*/
+#myflashBox{width: 5.58rem;height: 2.98rem;position: absolute; z-index: 4; left: .42rem;top: 1.68rem;}
+#page1{
+	background-image: url(images/1-bg.jpg);
+	background-size: 100% 100%;
+}
+#page2{
+	background-image: url(images/2-bg.jpg);
+	background-size: 100% 100%;
+}
+#page3{
+	background-image: url(images/3-bg.jpg);
+	background-size: 100% 100%;
+}
+#page3_time{
+	margin: 0 auto;
+	margin-top: 2.06rem;
+	background-image: url(images/3-time.png);
+	background-size: 100% 100%;
+	width: 3.92rem;
+	height: 7.73%;
+}
+#page3_video{
+	margin: 0 auto;
+	width: 5.80rem;
+	height: 30%;
+}
+#page3_logo{
+	margin: 0 auto;
+	margin-top: 0.73rem;
+	background-image: url(images/3-logo.png);
+	background-size: 100% 100%;
+	width: 2.04rem;
+	height: 15.1%;
+}
+#page3_btn{ 
+	margin: 0 auto;
+	margin-top: 0.52rem;
+	background-image: url(images/3-btn.png);
+	background-size: 100% 100%;
+	width: 3.15rem;
+	height: 5.36%;
+}
+#ruler{
+	position: relative;
+	margin: 0 auto;
+	margin-top: 3.16rem;
+	background-image: url(images/5-1.png);
+	background-size: 100% 100%;
+	width: 4.7rem;
+	height: 51.76%;
+}
+.esc{
+	position: absolute;
+	width: 0.4rem;
+	height: 0.4rem;
+	top: 0.2rem;
+	right: 0.2rem;
+	/*background: red;*/
+}
+#information{
+	position: relative;
+	margin: 0 auto;
+	margin-top: 3.66rem;
+	background-image: url(images/5-2.png);
+	background-size: 100% 100%;
+	width: 4.7rem;
+	height: 4.02rem;
+}
+form{
+	margin-left: 0.7rem;
+}
+.inputText{
+	width: 3.26rem;
+	height: 0.4rem;
+}
+#name_6{
+	margin-top: 1.14rem;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+#tel_6{
+	margin-top: 0.23rem;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+#submit_6{
+	margin-left: -0.7rem;
+	margin-top: 0.43rem;
+	width: 1.83rem;
+	height: 0.53rem;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+.non{display: none;}
+</style>
+
+</head>
+
+
+<body>
+
+<div class="swiper-container">
+    <div class="music">
+        <i class="icon-music open" num="1"></i>
+        <i class="music-span"></i>
+        <audio id="aud" src="http://n.sinaimg.cn/jiangsu/a70720e1/20170919/bgm.mp3"  loop="loop" autoplay="autoplay"></audio>
+        <div class="music_text">开启</div>
+    </div>
+    <div class="swiper-wrapper">
+        <!--1-->
+
+        <div class="swiper-slide" id="page1">		
+        </div>
+        <!--2-->
+        <div class="swiper-slide" id="page2">
+        </div>
+        <!--3-->
+        <div class="swiper-slide" id="page3">
+ 			<div id="page3_time"></div>
+ 			<div id="page3_video"></div>
+ 			<div id="page3_logo"></div>
+ 			<div id="page3_btn"></div>
+        </div>
+        <!--4-->
+        <div class="swiper-slide">
+4
+        </div>
+        <!--5-->
+        <div class="swiper-slide" id="page5">
+			<div id="ruler">
+				<div class="esc"></div>
+			</div>
+        </div>
+        <!--6-->
+        <div class="swiper-slide" id="page6">
+			<div id="information">
+				<div class="esc"></div>
+				<form action="" method="">
+					<input type="text" class="inputText" name="name" id="name_6" /><br />
+					<input type="tel" class="inputText" name="tel" id="tel_6" /><br />
+					<div id="submit_6" ></div>
+				</form>
+			</div>
+        </div>
+        <!--7-->
+        <div class="swiper-slide">
+7
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+    $(function(){
+        init_swiper();
+        //加载页按钮
+        $(".index_btn").click(function(){
+
+            $(this).fadeOut(1000);
+            $(".ren,.title,#loader__info").hide();
+
+            $(".juanzhoul1").animate({left:'-50%'
+            },2000,function(){
+                $(".juanzhouman1").fadeOut(1000)
+            });
+            $(".juanzhour1").animate({left:'100%'
+            },2000,function(){
+                $(".juanzhouman1").fadeOut(1000);
+                $("#prebox").remove();
+                init_swiper();
+                $(".top").css("visibility","visible");
+
+
+            });
+
+        })
+        //分享按钮
+        var pdpic=new Array("http://n.sinaimg.cn/jiangsu/a70720e1/20170915/faguo.png","http://n.sinaimg.cn/jiangsu/a70720e1/20170915/meiguo.png","http://n.sinaimg.cn/jiangsu/a70720e1/20170915/deguo.png","http://n.sinaimg.cn/jiangsu/a70720e1/20170915/hanguo.png","http://n.sinaimg.cn/jiangsu/a70720e1/20170915/xinxilan.png")
+        $(".fx_btn_info").click(function(){
+            var _this=$(this).index()
+
+            $(".peidui").attr("src",pdpic[_this]);
+            $(".fx_big_bg").fadeIn();
+
+            // $(".fxbg").fadeIn();
+        })
+        $(".fxbg").click(function(){
+            $(this).fadeOut();
+            $(".fx_big_bg").fadeOut();
+        })
+        $(".close").click(function(){
+            $(".fx_big_bg").fadeOut();
+        })
+        $(".ok").click(function(){
+            $(".fxbg").fadeIn();
+        })
+    })
+    function init_swiper(){
+
+
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction : 'vertical',
+            effect : 'silde',
+
+            lazyLoading : true,
+            lazyLoadingInPrevNext : true,
+            //virtualTranslate : true,
+            //autoplay:4000,
+            mousewheelControl : true,
+            onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+
+                swiperAnimate(swiper);
+
+            },
+            onSlideChangeEnd: function(swiper){
+
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+
+            }
+        })
+        function jumpTo(index){
+            myswiper.slideTo(index,0,true);
+        }
+        $(".music").click(function() {
+            if ($(".icon-music").attr("num") == "1") {
+                $(".icon-music").removeClass("open");
+                $(".icon-music").attr("num", "2")
+                $(".music-span").css("display", "none");
+                document.getElementById("aud").pause();
+                //          $(".music_text").html("关闭");
+                //          $(".music_text").addClass("show_hide");
+                setTimeout(musicHide, 2000);
+            } else {
+                $(".icon-music").attr("num", "1");
+                $(".icon-music").addClass("open");
+                $(".music-span").css("display", "block");
+                document.getElementById("aud").play();
+                //          $(".music_text").html("开启");
+                //          $(".music_text").addClass("show_hide");
+                setTimeout(musicHide, 2000);
+            }
+
+            function musicHide() {
+                $(".music_text").removeClass("show_hide");
+            }
+
+        });
+    }
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js?v=2.0"></script>
+<script>
+    shareDataF={
+        title:"有情有义，12小时爱上徐州",
+        desc:"43200秒打开你的新认知，带你了解一个不一样的北纬34.15 东经117.11",
+        link:"http://jiangsu.sina.com.cn/zt_d/xuzhou",
+        imgUrl:"http://n.sinaimg.cn/jiangsu/a70720e1/20170918/AiShangXuZhouh5-5.jpg"};
+    shareDataT={
+        title:"43200秒打开你的新认知，带你了解一个不一样的北纬34.15 东经117.11",
+        link:"http://jiangsu.sina.com.cn/zt_d/xuzhou",
+        imgUrl:"http://n.sinaimg.cn/jiangsu/a70720e1/20170918/AiShangXuZhouh5-5.jpg"};
+    function WechatConfig(){
+        this.debug=true;this.appId="";this.timestamp="";this.nonceStr="";this.signature="";this.jsApiList=null
+    }
+    var wechatClient=null;
+    function wxShare(){
+        wx.ready(function(){
+            wx.onMenuShareAppMessage(shareDataF);
+            wx.onMenuShareTimeline(shareDataT);
+            wx.onMenuShareQQ(shareDataF)
+        });
+        wx.error(function(a){})
+    }
+    function wxShareConfig(){
+        $sd_wx_url="http://zt.jiangsusina.com/weixinf/wx_share.php";
+        $.get($sd_wx_url,{url:window.location.href},function(a){
+                    wechatClient.debug=false;
+                    wechatClient.appId=a["appId"];
+                    wechatClient.jsApiList=["onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo"];
+                    wechatClient.nonceStr=a["nonceStr"];
+                    wechatClient.signature=a["signature"];
+                    wechatClient.timestamp=a["timestamp"];
+                    wx.config(wechatClient);
+                    wxShare()}
+                ,"jsonp")
+    }
+    $(function(){wechatClient=new WechatConfig();wxShareConfig()});
+
+
+
+</script>
+</body>
+</html>

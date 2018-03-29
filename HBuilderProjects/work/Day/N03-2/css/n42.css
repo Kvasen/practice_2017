@@ -1,0 +1,239 @@
+body{
+	font-family: "微软雅黑";
+	background: #ececff;
+}
+#title1{
+	font-size: 3em;
+}
+#title2{
+	font-size: small;
+	font-weight: bold;
+	display: inline;
+	
+}
+#title1 span,#title2>span{
+	/*font-size:small;*/
+	font:small "微软雅黑" ;
+	color: #7b7b7b;
+}
+table,td,th{
+	text-align: left;
+	/*background: white;*/
+	font-size:80%;
+	border-collapse: collapse;
+	padding: 10px 8px;
+	white-space: nowrap;
+}
+tr{
+	border-top-width: 1px;
+	border-top-color: #F0F0F0;
+	border-top-style: solid;
+}
+#table-1 td,#table-1 th{
+	border: 1px solid #f0f0f0;
+}
+#table-1{
+	float: left;
+	width: 100%;
+	margin-bottom: 20px;
+	background: white;
+}
+#table-2{
+	float: left;
+	width: 100%;
+	margin-bottom: 20px;
+	background: white;
+}
+#table-3{
+	float: left;
+	width: 100%;
+	background: white;
+}
+#table-4{
+	float: left;
+	width: 100%;
+	background: white;
+}
+#table-5{
+	float: left;
+	width: 100%;
+	background: white;
+}
+#table-outside-1{
+	box-shadow:0px 0px 3px 0px #7B7B7B;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+#table-inside-1{
+	font-size: 80%;
+	margin: 1px;
+	text-align: left;
+}
+.zero{
+	margin: 0px;
+	padding: 0px;
+}
+#table-inside-2{
+	border-collapse:separate;
+	border-spacing: 0px;
+	border: hidden;
+	display: inline-block;
+	font-size: 60%;
+	margin: 0px;
+	padding: 0px;
+}
+#table-inside-2 td{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	height: 25px;
+	width: 25px;
+	border-width:1px 1px 1px 0px;
+	border-style: solid ;
+	border-color: #d0d0d0;
+	background:#f7f7f7;
+}
+#table-inside-2 td:first-child{
+	border-left-width:1px;
+	border-radius: 4px 0px 0px 4px;
+}
+#table-inside-2 td:last-child{
+	border-radius: 0px 4px 4px 0px;
+}
+#table-inside-2-1{
+	font-size: 80%;
+	margin: 0px;
+	text-align: left;
+}
+#table-top-2{
+	/*float: left;*/
+	font-size:200%;
+}
+.grey{
+	background: #F0F0F0;
+}
+#table-inside-2-2{
+	border-collapse:separate;
+	border-spacing: 0px;
+	border: hidden;
+	display: inline-block;
+	/*float: right;*/
+	text-align: right;
+	/*width: 100%;*/
+	font-size: 60%;
+	margin: 0px;
+	padding: 0px;
+}
+#table-inside-2-2 td{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	height: 25px;
+	width: 25px;
+	border-width:1px 1px 1px 0px;
+	border-style: solid ;
+	border-color: #d0d0d0;
+	background:#f7f7f7;
+}
+#table-inside-2-2 td:first-child{
+	border-left-width:1px;
+	border-radius: 4px 0px 0px 4px;
+}
+#table-inside-2-2 td:last-child{
+	border-radius: 0px 4px 4px 0px;
+}
+#table-label-1{
+	font-weight: bold;
+	text-align: center;
+	font-size: smaller;
+	background: red;
+	color: white;
+	border-radius:8888px;
+}
+#table-label-2{
+	font-weight: bold;
+	text-align: center;
+	font-size: smaller;
+	background: orange;
+	color: white;
+	border-radius:8888px;
+}
+#table-label-3{
+	font-weight: bold;
+	text-align: center;
+	font-size: smaller;
+	background: blue;
+	color: white;
+	border-radius:8888px;
+}
+#table-label-4{
+	font-weight: bold;
+	text-align: center;
+	font-size: smaller;
+	background: green;
+	color: white;
+	border-radius:8888px;
+}
+#table-progress-1-left{
+	height: 6px;
+	background: red;
+	width: 55%;
+	float: left;
+}
+#table-progress-right{
+	height: 6px;
+	background: #f0f0f0;width:100%
+	float: left;
+}
+#table-progress-2-left{
+	height: 6px;
+	background: orange;
+	width: 70%;
+	float: left;
+}
+#table-progress-3-left{
+	height: 6px;
+	background: blue;
+	width: 30%;
+	float: left;
+}
+#table-progress-4-left{
+	height: 6px;
+	background: green;
+	width: 90%;
+	float: left;
+}
+#search{
+	border: none;
+}
+#table-inside-5-2{
+	border-collapse:separate;
+	border-spacing: 0px;
+	border: hidden;
+	display: inline-block;
+	/*float: right;*/
+	text-align: right;
+	/*width: 100%;*/
+	font-size: 60%;
+	margin: 0px;
+	padding: 0px;
+}
+#table-inside-5-2 td{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	height: 25px;
+	width: 25px;
+	border-width:1px 1px 1px 0px;
+	border-style: solid ;
+	border-color: #d0d0d0;
+}
+#table-inside-5-2 td:first-child{
+	border-left-width:1px;
+	border-radius: 4px 0px 0px 4px;
+}
+#table-inside-5-2 td:last-child{
+	border-radius: 0px 4px 4px 0px;
+	background:#f7f7f7;
+}

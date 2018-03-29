@@ -1,0 +1,277 @@
+.content {
+	margin: 0 auto;
+	width: 1020px;
+}
+body{
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+}
+.more{
+	font-style: italic;
+	text-decoration: none;
+	color: #000;;
+}
+.clearfix {
+	/*overflow: hidden;*/
+	_zoom: 1;
+}
+
+.clearfix:after,
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.main {
+	width: 1920px;
+}
+
+#p1 {
+	position: relative;
+	height: 820px;
+	background-image: url(../images/p_01.jpg);
+}
+
+#p2 {
+	position: relative;
+	height: 743px;
+	background-image: url(../images/p_02.jpg);
+}
+
+#p3 {
+	position: relative;
+	height: 984px;
+	background-image: url(../images/p_03.jpg);
+}
+
+#p4 {
+	position: relative;
+	height: 449px;
+	background-image: url(../images/p_04.jpg);
+}
+
+#p5 {
+	position: relative;
+	height: 1038px;
+	background-image: url(../images/p_05.jpg);
+}
+
+.p1_nav {
+	position: absolute;
+	left: 460px;
+	top: 550px;
+}
+
+.p1_nav a {
+	display: inline-block;
+	width: 240px;
+	height: 300px;
+}
+
+.p2_nav {
+	position: absolute;
+	left: 450px;
+	top: 140px;
+}
+
+.p2_nav a {
+	display: inline-block;
+	width: 140px;
+	height: 230px;
+}
+
+.scenic {
+	position: absolute;
+	left: 460px;
+	top: 356px;
+	width: 1020px;
+	height: 360px;
+}
+.p2_img img {
+	width: 490px;
+	height: 360px;
+}
+.p2_img{
+	width: 490px;
+	float: left;
+	margin-right: 16px;
+}
+.introduction {
+	position: absolute;
+	bottom: 0;
+	width: inherit;
+	height: 38px;
+	line-height: 38px;
+	color: #fff;
+	text-align: center;
+	background: rgba(0, 0, 0, .3);
+}
+.p3_img_lg{
+	/*position: absolute;
+	left: 460px;
+	top: 182px;*/
+	position: relative;
+	margin-top: 182px;
+	float: left;
+	width: 442px;
+	height: 276px;
+}
+.p3_img_lg img{
+	width: 442px;
+	height: 276px;
+}
+.p3_img_md{
+	/*position: absolute;
+	left: 1100px;
+	top: 245px;*/
+	position: relative;
+	margin-top: 245px;
+	margin-left: 196px;
+	float: left;
+	width: 360px;
+	height: 214px;
+}
+
+.p3_img_md .more{
+	position: absolute;
+	top: -40px;
+	right: 0;
+}
+.p3_img_md img{
+	width: 360px;
+	height: 214px;
+}
+.p3_imgs{
+	margin-top: 24px;
+}
+.p3_img_sm{
+	position: relative;
+	float: left;
+	width: 322px;
+	height: 200px;
+	margin: 0 16px 19px 0;
+}
+.p3_img_sm img{
+	width: 322px;
+	height: 200px;
+}
+.p4_imgs{
+	position: relative;
+	padding-top: 97px;
+	height: 420px;
+}
+.p4_img{
+	position: absolute;
+	width: 367px;
+	height: 236px;
+	padding: 3px 3px 0 3px;
+	background: #FFF;
+}
+.p4_img img{
+	width: 367px;
+	height: 236px;
+}
+.p4_img:nth-child(1){
+	left: 637px;
+}
+.p4_img:nth-child(2){
+	left: 324px;
+	top: 145px;
+}
+.p4_img:nth-child(3){
+	top: 183px;
+}
+.p4_imgs .more{
+	position: absolute;
+	right: 20px;
+	top: 60px;
+}
+.p5_imgs{
+	padding-top: 70px;
+}
+.p5_img_lg{
+	margin-right: 15px;
+	width: 503px;
+	height: 365px;
+}
+.p5_img_lg img{
+	width: 503px;
+	height: 365px;
+}
+.p5_img_md{
+	width: 477px;
+	height: 272px;
+}
+.p5_img_md img{
+	width: 477px;
+	height: 272px;
+}
+.p5_img_lg,
+.p5_img_md{
+	position: relative;
+	margin-bottom: 14px;
+	padding: 3px 3px 0 3px;
+	background: #FFF;
+}
+
+.p5_img_l,.p5_img_r{
+	float: left;
+}
+.p5_img_r{
+	position: relative;
+	margin-top: 185px;
+}
+.p5_imgs .more{
+	position: absolute;
+    top: 215px;
+    left: 1370px;
+}
+.left{
+	background-color: #ccc;
+	color: #FFF;
+	font-size: 40px;
+	width: 34px;
+	height: 164px;
+	line-height: 164px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: -40px;
+    border-radius: 4px 0 0 4px;
+}
+.right{
+	background-color: #ccc;
+	color: #FFF;
+	font-size: 40px;
+	width: 34px;
+	height: 164px;
+	line-height: 164px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -40px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 0 4px 4px 0;
+}
+.hide{
+	display: none;
+}
+.top{
+	display: block;
+	position: fixed;
+	left: 1600px;
+	top: 900px;
+	width: 85px;
+	height: 85px;
+	background-image: url(../images/top_03.png);
+	background-position: center;
+	border-radius: 100% 100%;
+	z-index: 999;
+}

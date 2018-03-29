@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body {
+				font-family: "微软雅黑";
+			}
+			
+			#search {
+				padding: 0;
+				margin: 0;
+				width: 200px;
+				outline: 0;
+				border: 1px solid rgb(125, 155, 255);
+			}
+			
+			ul {
+				padding: 0;
+				margin: 0;
+			}
+			
+			#result {
+				width: 200px;
+				border: 1px solid rgb(219, 219, 219);
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<input type="search" name="search" id="search" value="" placeholder="please input you questions" oninput='autoF()' />
+		<div id='result'>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var arr = ['aaa', 'abb', 'bba', 'aba', 'bcd', 'cab'];
+
+		function autoF() {
+			var searchValue = document.getElementById('search').value; //搜索输入的内容
+			var resultList = document.getElementById('result'); //结果栏 
+			while(resultList.hasChildNodes()) //清空结果栏
+			{
+				resultList.removeChild(resultList.firstChild);
+			}
+			var result = arr.filter(function(item, index, array) { //筛选结果
+				return searchValue.trim() && item.toLowerCase().indexOf(searchValue.trim().toLowerCase()) == 0;
+			});
+			if(result.length) {
+				resultList.style.display = 'block';
+				//				var resultValueList = document.createElement('ul');
+				//				for(var i = 0; i < result.length; i++) {
+				//					var resultValue = document.createElement('li');
+				//					var value = document.createTextNode(result[i]);
+				//					resultValue.appendChild(value);
+				//					resultValueList.appendChild(resultValue);
+				//				}
+				//				resultList.appendChild(resultValueList);
+				var jieguoa = '<ul>';
+				for(var i = 0; i < result.length; i++) {
+					jieguoa += '<li>' + result[i] + '</li>';
+				}
+				jieguoa += '</ul>';
+				resultList.innerHTML = jieguoa;
+			} else {
+				resultList.style.display = 'none';
+			}
+			resultList.onmouseover = function(e) {
+				if(e.target.nodeName.toLowerCase() == "li") {
+					e.target.style.background = '#eee';
+				}
+			}
+			resultList.onmouseout = function(e) {
+				if(e.target.nodeName.toLowerCase() == "li") {
+					e.target.style.background = '#FFF';
+				}
+			}
+			resultList.onclick = function(e) {
+				if(e.target.nodeName.toLowerCase() == "li") {
+					document.getElementById('search').value = e.target.innerText;
+					resultList.style.display = 'none';
+				}
+			}
+		}
+	</script>
+
+</html>

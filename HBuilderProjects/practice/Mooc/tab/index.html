@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/tab.css" />
+	</head>
+
+	<body>
+		<div class="kvTab1">
+			<ul>
+				<li class="kvTabNav active">新闻</li>
+				<li class="kvTabNav">娱乐</li>
+				<li class="kvTabNav">电影</li>
+				<li class="kvTabNav">科技</li>
+			</ul>
+			<div class="kvContent display">
+				<p>1</p>
+			</div>
+			<div class="kvContent">
+				<p>2</p>
+			</div>
+			<div class="kvContent">
+				<p>3</p>
+			</div>
+			<div class="kvContent">
+				<p>4</p>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				var Tab = function(el,ty, auto, inde) {
+					var config = {
+						type: "mouseover",
+						autoPlay: 999,
+						index: 0
+					};
+						(ty==="mouseover"||ty==="click")&&(config.type = ty);
+						(!isNaN(auto))&&(config.autoPlay = auto);
+						(!isNaN(inde))&&(config.index = inde);
+
+					var timer=null;
+					//					console.log($(el).find("li").text());
+					var play = function() {
+						$(el).find(".active").removeClass("active");
+						$(el).find(".kvTabNav:eq(" + config.index + ")").addClass("active");
+						$(el).find(".display").removeClass("display");
+						$(el).find(".kvContent:eq(" + config.index + ")").addClass("display");
+					};
+					var autoPl = function() {
+						if(!isNaN(config.autoPlay)) { 
+							clearInterval(timer);
+							timer = setInterval(function() {
+								config.index = (config.index + 1) % 4;
+								play();
+							}, config.autoPlay);
+						}
+					};
+					$(el).on(config.type, ".kvTabNav", function() {
+						clearInterval(timer);
+						config.index = $(this).index();
+						play();
+					}).on("mouseleave", ".kvTabNav", function() {
+						autoPl();
+					});
+					$(el).find("div").on("mouseenter", function() {
+						clearInterval(timer);
+					}).on("mouseleave", function() {
+						autoPl();
+					}); 
+					play();
+					autoPl();
+				};
+
+				var tab1 = new Tab(".kvTab1");
+
+			});
+		</script>
+	</body>
+  
+</html>

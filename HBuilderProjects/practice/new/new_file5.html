@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<div id="nav">
+			<a href="http://www.51xuediannao.com/">建站素材</a>
+			<a href="http://www.51xuediannao.com/">jquery特效</a>
+			<a href="http://www.51xuediannao.com/">懒人主机</a>
+			<a href="http://www.51xuediannao.com/qd63/">前端路上</a>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$("#nav a").click(function() {
+				var index1 = $("#nav a").index(this);
+				var index2 = $("#nav a").index($(this));
+				var index3 = $(this).index();
+				var index4 = $(this).index("a");
+				console.log(index1 + "-" + index2 + "-" + index3 + "-" + index4);
+				return false;
+			});
+		</script>
+
+	</body>
+
+</html>

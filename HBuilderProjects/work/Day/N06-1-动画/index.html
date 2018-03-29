@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+
+		.AA{
+			border:20px double deepskyblue;
+			height:66px;
+			width:66px;
+			-webkit-animation:mmmove 2s infinite linear;
+		}
+
+		@-webkit-keyframes mmmove
+		{
+		0%{-webkit-transform:rotate(0deg);}
+		50%{-webkit-transform:rotate(180deg);height: 99px;}
+		100%{-webkit-transform:rotate(360deg);}
+		}
+		
+		.BB{
+			border:20px double red;
+			height:66px;
+			width:66px;
+			transition: 2s;
+		}	
+		.BB:hover{
+			-webkit-transform:rotate(360deg) skew(180deg) scale(2,0.5) translate(
+			50px);
+			height: 200px;
+		}
+		
+		.flex{
+			border: 3px solid #CCEEAA ;
+			display: flex;
+		}
+		</style>
+	</head>
+	
+	
+	<body>
+		<div class="flex">
+		<div class="AA">1</div>
+		<div class="BB">2</div>
+		</div>
+	</body>
+</html>

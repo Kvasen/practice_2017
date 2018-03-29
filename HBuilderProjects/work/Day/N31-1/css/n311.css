@@ -1,0 +1,71 @@
+body{
+	margin: 0;
+	font-family: "黑体";
+	background-color: #000000;
+}
+div{
+	margin: 0 auto;
+	color: white;
+	box-sizing: border-box;
+}
+.swiper-container{
+	width: 100%;
+}
+/*.swiper-slide{height:10px}    .swiper-slide-active { height:auto}*/
+#pingan_1{
+	background-image: url(../img/平安.jpg);
+	background-size: cover;
+	background-position: top;
+}
+#pingan_2{
+	background-image: url(../img/平安5.jpg);
+	background-size: cover;
+	background-position: top;
+}
+.text{
+	width: 88%;
+	font-size: 1.375rem;
+	line-height: 2.25rem;
+	position: relative;
+}
+#pingan_2 span{
+	color: #e7231f;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+#pingan_3{
+	background-image: url(../img/平安6.jpg);
+	background-size: cover;
+	background-position: top;
+}
+#pingan_3 .text{
+	border-left: 2px solid #e7231f;
+	font-weight: bold;
+}
+#pingan_4{
+	background-image: url(../img/平安7.jpg);
+	background-size: cover;
+	background-position: top;
+}
+#pingan_4 .input{
+	width: 70%;
+	font-size: 1.5rem;
+	font-weight: bold;
+	line-height: 2.25rem;
+}
+input{
+	border:1px solid #e7231f;
+	/*opacity: 0.1;*/
+	background-color: rgba(0,0,0,0);
+	width: 100%;
+	color: white;
+	font-weight: bold;
+}
+#submit{
+	width: 6em;
+	margin: 2rem auto;
+	text-align: center;
+	background-color: #E7231F;
+	padding: 0.4rem 0;
+	border-radius: 0.5rem;
+}

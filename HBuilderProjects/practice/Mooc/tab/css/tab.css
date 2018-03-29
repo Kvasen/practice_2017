@@ -1,0 +1,43 @@
+body{
+	background: #777;
+}
+div,ul,li,p{
+	padding: 0;
+	margin: 0;
+}
+ul,li{
+	list-style: none;
+}
+ul{
+	overflow:hidden;
+}
+.kvTabNav{
+	background-color: #a3a3a3;
+	color: #fff;
+	float: left;
+	border-radius: 3px 3px 0 0;
+	padding: 7px 19px;
+	margin-right: 5px;
+	font-size: 12px;
+}
+.kvContent{
+	background-color: #fff;
+	width: 300px;
+	height: 200px;
+	display: none;
+	padding: 7px;
+}
+.active{
+	background-color: #FFFFFF;
+	color: #000;
+	font-weight: bold;
+}
+.display{
+	display: block;
+}
+p{
+	background: #777777;
+	height: 100%;
+	text-align: center;
+	font-size: 190px;
+}

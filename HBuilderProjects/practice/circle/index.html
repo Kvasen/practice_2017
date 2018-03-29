@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			div {
+				border: 2px solid black;
+				height: 9em;
+				width: 9em;
+				position: absolute;
+				left: 150px;
+				top: 150px;
+			}
+			
+			#A {
+				border: 2px dotted red;
+				height: 9em;
+				width: 9em;
+				border-radius: 50%;
+				-webkit-animation: tr 2s infinite linear;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				text-align: center;
+				display: table-cell;
+				vertical-align: middle;
+			}
+			
+			#a {
+				height: 4.5em;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			
+			#b {
+				width: 4.5em;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+			}
+			
+			@-webkit-keyframes tr {
+				from {
+					-webkit-transform: skew(0deg, 0deg);
+				}
+				to {
+					-webkit-transform: skew(180deg);
+				}
+			}
+			
+			#triangle-up {
+				width: 0;
+				height: 0;
+				border-left: 300px solid transparent;
+				border-right: 50px solid transparent;
+				border-bottom: 100px solid red;
+				border-top: 100px solid red;
+			}
+			
+			#curvedarrow:after {
+				content: "";
+				position: absolute;
+				border: 0 solid transparent;
+				border-top: 3px solid red;
+				border-radius: 20px 0 0 0;
+				top: -52px;
+				left: -9px;
+				width: 12px;
+				height: 12px;
+				-webkit-transform: rotate(45deg);
+			}
+			
+			#circle {
+				width: 100px;
+				height: 100px;
+				background: blue;
+				border-radius: 50%;
+				border: 0;
+				border-bottom: 30px solid mediumvioletred;
+				border-top: 30px solid transparent;
+				border-left: 30px solid fuchsia;
+				position: absolute;
+				top: 20px;
+				left: 29px;
+			}
+			
+			#trapezoid {
+				border-bottom: 100px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				height: 0;
+				width: 100px;
+				position: absolute;
+				top: 360px;
+				left: 29px;
+			}
+			
+			#star-six {
+				width: 96px;
+				height: 48px;
+				background: -webkit-radial-gradient(333%, blue, green, red, purple, yellow, white, black);
+				border-color: gray;
+				d border-style: solid;
+				border-width: 2px 2px 50px 2px;
+				border-radius: 100%;
+				position: relative;
+				top: 80px;
+				left: 0px;
+				font-size: 400%;
+				font-style: oblique;
+				/*-webkit-box-reflect: below ;*/
+				color: yellowgreen;
+				mix-blend-mode: screen;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<div id="A">A<br />A<br />A<br />A&nbsp;&nbsp;A&nbsp;&nbsp;A&nbsp;&nbsp;A&nbsp;&nbsp;A&nbsp;&nbsp;A&nbsp;&nbsp;A<br />A<br />A<br />A</div>
+			<div id="a">a</div>
+			<div id="b">b</div>
+		</div>
+		<div id="triangle-up">tria</div>
+		<div id="curvedarrow">cu</div>
+		<div id="circle">ci</div>
+		<div id="trapezoid">trap</div>
+		<div id="star-six"> &nbsp;&nbsp;&nbsp;star</div>
+
+	</body>
+
+</html>

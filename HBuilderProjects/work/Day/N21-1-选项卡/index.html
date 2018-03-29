@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link href="css/n211.css" type="text/css" rel="stylesheet" />
+		<title></title>
+	</head>
+
+	<body>
+		<ul>
+			<li class="choosed">一一</li>
+			<li>二二</li>
+			<li>三三</li>
+		</ul>
+		<div class="actived">
+			<h3>yiyiyiiyiyyiyyiyi</h3>
+			<p>yiyiyiyiyiyyyyiyyiyiyyiyiyiyiyiyiyiyyiyiiyiiy</p>
+		</div>
+		<div>
+			<h3>ererererererererer</h3>
+			<p>erererererererererererererererererererererere</p>
+		</div>
+		<div>
+			<h3>sansansasnsansansa</h3>
+			<p>sansansasnsansansasansansasnsansansasansansas</p>
+		</div>
+		<script type="text/javascript">
+			var LI = document.getElementsByTagName("li");
+			var DI = document.getElementsByTagName("div");
+			for(var j = 0; j < LI.length; j++) {
+				LI[j].index = j;
+				LI[j].onclick = function(){
+					for(var k = 0; k < LI.length; k++) {
+						LI[k].className = "";
+						DI[k].className = "";
+					}
+					this.className = "choosed";
+					DI[this.index].className = "actived";
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=1200,user-scalable=yes">
+		<title></title>
+        <script src="http://n.sinaimg.cn/jiangsu/a70720e1/20161208/swiper-3.4.0.min.js"></script>
+        <link rel="stylesheet" href="http://n.sinaimg.cn/7106709f/20150922/swiper.min.css">
+		<style>
+        .content {
+            margin: 0 auto;
+            width: 1020px;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+
+        }
+        .more{
+            font-style: italic;
+            text-decoration: none;
+            color: #000;;
+        }
+        .clearfix {
+            /*overflow: hidden;*/
+            _zoom: 1;
+        }
+
+        .clearfix:after,
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .main {
+            width: 100%;
+        }
+
+        #p1 {
+            position: relative;
+            width: 100%;
+            height: 820px;
+            background: url(images/p_01.jpg) no-repeat center 0;
+        }
+
+        #p2 {
+            width: 100%;
+            position: relative;
+            height: 743px;
+            background: url(images/p_02.jpg) no-repeat center 0;
+        }
+
+        #p3 {
+            width: 100%;
+            position: relative;
+            height: 984px;
+            background: url(images/p_03.jpg) no-repeat center 0;
+        }
+
+        #p4 {
+            width: 100%;
+            position: relative;
+            height: 449px;
+            background: url(images/p_04.jpg) no-repeat center 0;
+        }
+
+        #p5 {
+            width: 100%;
+            position: relative;
+            height: 1038px;
+            background: url(images/p_05.jpg) no-repeat center 0;
+        }
+
+        .p1_nav {
+            position: absolute;
+            left: 460px;
+            top: 550px;
+        }
+
+        .p1_nav a {
+            display: inline-block;
+            width: 240px;
+            height: 300px;
+        }
+
+        .p2_nav {
+       width: 1000px;
+            margin: 0 auto;
+            padding-top: 140px;
+            height: 200px;
+
+        }
+
+        .p2_nav a {
+            display: inline-block;
+            width: 140px;
+            height: 230px;
+        }
+
+        .scenic {
+
+            width: 1020px;
+            height: 360px;
+            margin: 0 auto;
+        }
+        .p2_img img {
+            width: 490px;
+            height: 360px;
+        }
+        .p2_img{
+            width: 490px;
+            float: left;
+            margin-right: 16px;
+        }
+        .introduction {
+            position: absolute;
+            bottom: 0;
+            width: inherit;
+            height: 38px;
+            line-height: 38px;
+            color: #fff;
+            text-align: center;
+            background: rgba(0, 0, 0, .3);
+        }
+        .introduction_1 {
+            position: relative;
+            bottom: 42px;
+            width: inherit;
+            height: 38px;
+            line-height: 38px;
+            color: #fff;
+            text-align: center;
+            background: rgba(0, 0, 0, .3);
+        }
+        .p3_img_lg{
+            /*position: absolute;
+            left: 460px;
+            top: 182px;*/
+            position: relative;
+            margin-top: 182px;
+            float: left;
+            width: 442px;
+            height: 276px;
+        }
+        .p3_img_lg img{
+            width: 442px;
+            height: 276px;
+        }
+        .p3_img_md{
+            /*position: absolute;
+            left: 1100px;
+            top: 245px;*/
+            position: relative;
+            margin-top: 245px;
+            margin-left: 196px;
+            float: left;
+            width: 360px;
+            height: 214px;
+        }
+
+        .p3_img_md .more{
+            position: absolute;
+            top: -40px;
+            right: 0;
+        }
+        .p3_img_md img{
+            width: 360px;
+            height: 214px;
+        }
+        .p3_imgs{
+            margin-top: 24px;
+            width: 1020px;;
+        }
+        .p3_img_sm{
+            position: relative;
+            float: left;
+            width: 322px;
+            height: 200px;
+            margin: 0 16px 19px 0;
+        }
+        .p3_img_sm img{
+            width: 322px;
+            height: 200px;
+        }
+        .p4_imgs{
+            position: relative;
+            padding-top: 97px;
+            height: 420px;
+        }
+        .p4_img{
+            position: absolute;
+            width: 367px;
+            height: 236px;
+            padding: 3px 3px 0 3px;
+            background: #FFF;
+        }
+        .p4_img img{
+            width: 367px;
+            height: 236px;
+        }
+        .p4_img:nth-child(1){
+            left: 637px;
+        }
+        .p4_img:nth-child(2){
+            left: 324px;
+            top: 145px;
+        }
+        .p4_img:nth-child(3){
+            top: 183px;
+        }
+        .p4_imgs .more{
+            position: absolute;
+            right: 20px;
+            top: 60px;
+        }
+        .p5_imgs{
+            padding-top: 70px;
+            width: 1010px;
+        }
+        .p5_img_lg{
+            margin-right: 15px;
+            width: 503px;
+            height: 365px;
+        }
+        .p5_img_lg img{
+            width: 503px;
+            height: 365px;
+        }
+        .p5_img_md{
+            width: 477px;
+            height: 272px;
+        }
+        .p5_img_md img{
+            width: 477px;
+            height: 272px;
+        }
+        .p5_img_lg,
+        .p5_img_md{
+            position: relative;
+            margin-bottom: 14px;
+            padding: 3px 3px 0 3px;
+            background: #FFF;
+        }
+
+        .p5_img_l,.p5_img_r{
+            float: left;
+        }
+        .p5_img_r{
+            position: relative;
+            margin-top: 185px;
+        }
+        .p5_imgs .more{
+            position: absolute;
+            top: 215px;
+            left: 932px;
+        }
+        .left{
+            background-color: #ccc;
+            color: #FFF;
+            font-size: 40px;
+            width: 34px;
+            height: 164px;
+            line-height: 164px;
+
+
+            border-radius: 4px 0 0 4px;
+        }
+        .right{
+            background-color: #ccc;
+            color: #FFF;
+            font-size: 40px;
+            width: 34px;
+            height: 164px;
+            line-height: 164px;
+
+
+            border-radius: 0 4px 4px 0;
+        }
+        .hide{
+            display: none;
+        }
+        .top{
+            display: block;
+            position: fixed;
+            left: 1600px;
+            top: 900px;
+            width: 85px;
+            height: 85px;
+            background-image: url(images/top_03.png);
+            background-position: center;
+            border-radius: 100% 100%;
+            z-index: 999;
+        }
+        .swiper-container{width: 1000px; height: 980px;margin: 0 auto;}
+        .swiper-container1{width: 1000px; height: 500px;margin: 0 auto; overflow: hidden;position: relative;}
+        .swiper-container2{width: 1000px; height: 900px;margin: 0 auto; overflow: hidden;position: relative;}
+        </style>
+	</head>
+
+	<body>
+		<div class="main">
+			<a href="#" class="top"></a>
+			<div id="p1">
+				<div class="p1_nav">
+					<a href="#p2"></a>
+					<a href="#p3"></a>
+					<a href="#p4"></a>
+					<a href="#p5"></a>
+				</div>
+			</div>
+			<div id="p2">
+				<div class="p2_nav">
+					<a></a>
+					<a></a>
+					<a></a>
+					<a></a>
+					<a></a>
+					<a></a>
+					<a></a>
+				</div>
+				<div class="scenic">
+					<div class="scenics">
+						<div class="p2_img">
+							<img src="https://dummyimage.com/490x360/372/fff" />
+							<div class="introduction_1">桥李生态旅游村</div>
+						</div>
+						<div class="p2_img">
+							<img src="" />
+							<div class="introduction_1">望玉岛度假村</div>
+						</div>
+					</div>
+					<div class="scenics">
+						<div class="p2_img">
+							<img src="https://dummyimage.com/490x360/372/fff" />
+							<div class="introduction_1">222</div>
+						</div>
+						<div class="p2_img">
+							<img src="" />
+							<div class="introduction_1">222</div>
+						</div>
+					</div>
+					<div class="scenics">
+						<div class="p2_img">
+							<img src="https://dummyimage.com/490x360/372/fff" />
+							<div class="introduction_1">333</div>
+						</div>
+						<div class="p2_img">
+							<img src="" />
+							<div class="introduction_1">333</div>
+						</div>
+					</div>
+					<div class="scenics">
+						<div class="p2_img">
+							<img src="https://dummyimage.com/490x360/372/fff" />
+							<div class="introduction_1">444</div>
+						</div>
+						<div class="p2_img">
+							<img src="" />
+							<div class="introduction_1">444</div>
+						</div>
+					</div>
+					<div class="scenics">
+						<div class="p2_img">
+							<img src="https://dummyimage.com/490x360/372/fff" />
+							<div class="introduction_1">555</div>
+						</div>
+						<div class="p2_img">
+							<img src="" />
+							<div class="introduction_1">555</div>
+						</div>
+					</div>
+					<div class="scenics">
+						<div class="p2_img">
+							<img src="https://dummyimage.com/490x360/372/fff" />
+							<div class="introduction_1">666</div>
+						</div>
+						<div class="p2_img">
+							<img src="" />
+							<div class="introduction_1">666</div>
+						</div>
+					</div>
+					<div class="scenics">
+						<div class="p2_img">
+							<img src="https://dummyimage.com/490x360/372/fff" />
+							<div class="introduction_1">777</div>
+						</div>
+						<div class="p2_img">
+							<img src="" />
+							<div class="introduction_1">777</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="p3">
+				<div class="content">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <section class="swiper-slide" >
+                                <div class="p3_img_top clearfix">
+                                    <div class="p3_img_lg">
+                                        <img src="https://dummyimage.com/442x276/372/fff" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_md">
+                                        <a class="more" href="#">更多>></a>
+                                        <img src="https://dummyimage.com/360x214/372/fff" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                </div>
+                                <div class="p3_imgs clearfix">
+                                    <div class="p3_img_sm">
+
+                                        <img src="https://dummyimage.com/322x200/372/fff" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                </div>
+
+                            </section>
+                            <section class="swiper-slide" >
+                                <div class="p3_img_top clearfix">
+                                    <div class="p3_img_lg">
+                                        <img src="https://dummyimage.com/442x276/372/fff" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_md">
+                                        <a class="more" href="#">更多>></a>
+                                        <img src="https://dummyimage.com/360x214/372/fff" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                </div>
+                                <div class="p3_imgs clearfix">
+                                    <div class="p3_img_sm">
+
+                                        <img src="https://dummyimage.com/322x200/372/fff" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                    <div class="p3_img_sm">
+                                        <img src="" />
+                                        <div class="introduction">潇雅轩农庄</div>
+                                    </div>
+                                </div>
+
+                            </section>
+
+                        </div>
+                        <div class="swiper-button-prev swiper-button-white  sbw_lf left"></div>
+                        <div class="swiper-button-next swiper-button-white  sbw_rg right"></div>
+
+
+                    </div>
+				</div>
+			</div>
+
+			<div id="p4">
+				<div class="content">
+                    <div class="swiper-container1">
+                        <div class="swiper-wrapper">
+                            <section class="swiper-slide" >
+                                <div class="p4_imgs">
+                                    <div class="p4_img">
+                                        <img src="https://dummyimage.com/365x236/372/fff" />
+                                        <div class="introduction">2016年溧水梅花节</div>
+
+                                    </div>
+                                    <div class="p4_img">
+                                        <img src="https://dummyimage.com/365x236/372/fff" />
+                                        <div class="introduction">2016年溧水梅花节</div>
+                                    </div>
+                                    <div class="p4_img">
+
+                                        <img src="https://dummyimage.com/365x236/372/fff" />
+                                        <div class="introduction">2016年溧水梅花节</div>
+                                    </div>
+                                    <a class="more" href="#">更多>></a>
+                                </div>
+
+                            </section>
+                            <section class="swiper-slide" >
+                                <div class="p4_imgs">
+                                    <div class="p4_img">
+                                        <img src="https://dummyimage.com/365x236/372/fff" />
+                                        <div class="introduction">2016年溧水梅花节</div>
+
+                                    </div>
+                                    <div class="p4_img">
+                                        <img src="https://dummyimage.com/365x236/372/fff" />
+                                        <div class="introduction">2016年溧水梅花节</div>
+                                    </div>
+                                    <div class="p4_img">
+
+                                        <img src="https://dummyimage.com/365x236/372/fff" />
+                                        <div class="introduction">2016年溧水梅花节</div>
+                                    </div>
+                                    <a class="more" href="#">更多>></a>
+                                </div>
+
+                            </section>
+
+                        </div>
+                        <div class="swiper-button-prev swiper-button-white  sbw_lf1 left"></div>
+                        <div class="swiper-button-next swiper-button-white  sbw_rg1 right"></div>
+
+                    </div>
+				</div>
+			</div>
+			<div id="p5">
+				<div class="content">
+                    <div class="swiper-container2">
+                        <div class="swiper-wrapper">
+                            <section class="swiper-slide" >
+                                <div class="p5_imgs clearfix">
+                                    <div class="p5_img_l">
+
+                                        <div class="p5_img_lg">
+                                            <img src="https://dummyimage.com/503x365/372/fff" />
+                                            <div class="introduction">2016年溧水梅花节</div>
+                                        </div>
+                                        <div class="p5_img_lg">
+                                            <img src="https://dummyimage.com/503x365/372/fff" />
+                                            <div class="introduction">2016年溧水梅花节</div>
+                                        </div>
+                                    </div>
+                                    <div class="p5_img_r">
+                                        <div class="p5_img_md">
+                                            <img src="https://dummyimage.com/477x272/372/fff" />
+                                            <div class="introduction">2016年溧水梅花节</div>
+                                        </div>
+                                        <div class="p5_img_md">
+                                            <img src="https://dummyimage.com/477x272/372/fff" />
+                                            <div class="introduction">2016年溧水梅花节</div>
+                                        </div>
+
+                                    </div>
+                                    <a class="more" href="#">更多>></a>
+                                </div>
+
+                            </section>
+                            <section class="swiper-slide" >
+                                <div class="p5_imgs clearfix">
+                                    <div class="p5_img_l">
+
+                                        <div class="p5_img_lg">
+                                            <img src="https://dummyimage.com/503x365/372/fff" />
+                                            <div class="introduction">2016年溧水梅花节</div>
+                                        </div>
+                                        <div class="p5_img_lg">
+                                            <img src="https://dummyimage.com/503x365/372/fff" />
+                                            <div class="introduction">2016年溧水梅花节</div>
+                                        </div>
+                                    </div>
+                                    <div class="p5_img_r">
+                                        <div class="p5_img_md">
+                                            <img src="https://dummyimage.com/477x272/372/fff" />
+                                            <div class="introduction">2016年溧水梅花节</div>
+                                        </div>
+                                        <div class="p5_img_md">
+                                            <img src="https://dummyimage.com/477x272/372/fff" />
+                                            <div class="introduction">2016年溧水梅花节</div>
+                                        </div>
+
+                                    </div>
+                                    <a class="more" href="#">更多>></a>
+                                </div>
+
+                            </section>
+
+                        </div>
+                        <div class="swiper-button-prev swiper-button-white  sbw_lf2 left"></div>
+                        <div class="swiper-button-next swiper-button-white  sbw_rg2 right"></div>
+
+                    </div>
+			</div>
+			</div>
+		</div>
+	</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$(".scenic").children().addClass("hide");
+		$(".scenics").first().removeClass("hide");
+		$nav=$(".p2_nav a");
+		$nav.on("click",function(){
+			$(".scenics").hide();
+			$(".scenics:eq("+$(this).index()+")").show();
+		})
+		
+	});
+</script>
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+
+            prevButton:'.sbw_lf',
+            nextButton:'.sbw_rg'
+
+
+            //可选选项，自动滑动
+        })
+        var mySwiper = new Swiper('.swiper-container1', {
+
+            prevButton:'.sbw_lf1',
+            nextButton:'.sbw_rg1'
+
+
+            //可选选项，自动滑动
+        })
+        var mySwiper = new Swiper('.swiper-container2', {
+
+            prevButton:'.sbw_lf2',
+            nextButton:'.sbw_rg2'
+
+
+            //可选选项，自动滑动
+        })
+
+    </script>
+</html>

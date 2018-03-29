@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/n431.css"/>
+	</head>
+	<body>
+	
+	<div class="kvContainer">
+		<ul class="kvNav">
+			<li data-id = "kvA" class="kvNavChoosed"><img src="img/专题选手风采 (1).png"/><p>单排轮滑球<br /></p></li>
+			<li data-id = "kvB"><img src="img/专题选手风采 (2).png"/><p>双排轮滑球<br /></p></li>
+			<li data-id = "kvC"><img src="img/专题选手风采 (3).png"/><p>花样轮滑<br /></p></li>
+			<li data-id = "kvD"><img src="img/专题选手风采 (4).png"/><p>轮滑回转<br /></p></li>
+			<li data-id = "kvE"><img src="img/专题选手风采 (5).png"/><p>高山速降<br /></p></li>
+			<li data-id = "kvF"><img src="img/专题选手风采 (6).png"/><p>自由式轮滑<br /></p></li>
+			<li data-id = "kvG"><img src="img/专题选手风采 (7).png"/><p>极限轮滑<br /></p></li>
+			<li data-id = "kvI"><img src="img/专题选手风采 (9).png"/><p>速度轮滑<br /></p></li>
+			<li data-id = "kvH"><img src="img/专题选手风采 (8).png"/><p>滑板<br /></p></li>
+			<li data-id = "kvJ"><img src="img/专题选手风采 (10).png"/><p>轮滑阻拦赛<br /></p></li>
+		</ul>
+	</div>
+	<div class="kvContainer">
+		<div class="kvDisplayer">
+		<div id="kvA" class="kvDis">
+			<div class="kvImg kvImg1">单排轮滑球</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div id="kvB">
+			<div class="kvImg kvImg1">双排轮滑球</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div id="kvC">
+			<div class="kvImg kvImg1">花样轮滑</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div id="kvD">
+			<div class="kvImg kvImg1">轮滑回转</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div id="kvE">
+			<div class="kvImg kvImg1">高山速降</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div id="kvF">
+			<div class="kvImg kvImg1">自由式轮滑</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div id="kvG">
+			<div class="kvImg kvImg1">极限轮滑</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div id="kvH">
+			<div class="kvImg kvImg1">滑板</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div class="kvHide" id="kvI">
+			<div class="kvImg kvImg1">速度轮滑</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>			
+		<div id="kvJ">
+			<div class="kvImg kvImg1">轮滑阻拦赛</div>
+			<div class="kvImg kvImg2"></div>
+			<div class="kvImg kvImg3"></div>
+			<div class="kvImg kvImg4"></div>
+			<div class="kvImg kvImg1"></div>
+			<div class="kvImg kvImg2"></div>
+		</div>	
+		</div>
+	</div>
+	
+	
+	<script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$(document).ready(function(){
+			$(".kvNav").on("click","li",function(e){
+				$(".kvNav li").removeClass("kvNavChoosed");
+				$(this).addClass("kvNavChoosed");
+				$(".kvDis").removeClass("kvDis");
+				$("#"+$(this).data("id")).addClass("kvDis");
+//				console.log($(this).data("id"))
+			})
+		});
+	</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+div{
+	border: 2px solid ;
+	height: 80px;
+	width: 60px;
+	margin: 20px;
+}
+.A{
+	-webkit-transition: all 2s;
+	border-width: 20px;
+	background-image:-webkit-radial-gradient(left 30deg,rgb(220, 75, 200),rgb(0, 0, 75));
+}
+.A:hover{
+	-webkit-transform: translateX(350px) rotate(360deg);
+}
+@-webkit-keyframes BB{
+	from{}
+	to{-webkit-transform: translateX(350px) rotate(360deg);}
+}
+.B{
+	-webkit-animation: BB 2s alternate infinite linear;
+	background: -webkit-gradient(linear, 0 0, 100% 100%, from(#ace),to(#f96));
+}
+@-webkit-keyframes CC{
+	0%{}
+	50%{-webkit-transform: translateX(350px) rotate(360deg);}
+	100%{-webkit-transform: translateX(0px) rotate(720deg);}
+}
+.C{
+	-webkit-animation: CC 4s infinite linear;
+	background:  radial-gradient(20px,yellow,rgb(220, 75, 200));
+}
+@-webkit-keyframes DD{
+	0%{-webkit-transform: scale(1);}
+	100%{-webkit-transform: scale(0);}
+}
+.D{	
+	background: repeating-radial-gradient(gold 1px,green);
+	background-image: repeating-radial-gradient(gold 1px,green);
+	-webkit-animation: DD 2s infinite linear;
+}
